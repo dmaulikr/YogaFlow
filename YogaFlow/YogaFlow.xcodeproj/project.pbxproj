@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		40544E8E1D36D522003A1BB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40544E8D1D36D522003A1BB7 /* AppDelegate.swift */; };
-		40544E901D36D522003A1BB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40544E8F1D36D522003A1BB7 /* ViewController.swift */; };
 		40544E931D36D522003A1BB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40544E911D36D522003A1BB7 /* Main.storyboard */; };
 		40544E951D36D522003A1BB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40544E941D36D522003A1BB7 /* Assets.xcassets */; };
 		40544E981D36D522003A1BB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40544E961D36D522003A1BB7 /* LaunchScreen.storyboard */; };
+		40544EA01D36FAB0003A1BB7 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40544E9F1D36FAB0003A1BB7 /* SearchTableViewController.swift */; };
+		40544EA31D36FBC2003A1BB7 /* FlowListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40544EA21D36FBC2003A1BB7 /* FlowListTableViewController.swift */; };
+		40544EA51D36FC01003A1BB7 /* PoseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40544EA41D36FC01003A1BB7 /* PoseDetailViewController.swift */; };
+		40544EA71D36FC19003A1BB7 /* FlowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40544EA61D36FC19003A1BB7 /* FlowTableViewController.swift */; };
+		40544EA91D36FC5F003A1BB7 /* AddFlowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40544EA81D36FC5F003A1BB7 /* AddFlowTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		40544E8A1D36D522003A1BB7 /* YogaFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YogaFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40544E8D1D36D522003A1BB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		40544E8F1D36D522003A1BB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		40544E921D36D522003A1BB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		40544E941D36D522003A1BB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40544E971D36D522003A1BB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40544E991D36D522003A1BB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40544E9F1D36FAB0003A1BB7 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		40544EA21D36FBC2003A1BB7 /* FlowListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowListTableViewController.swift; sourceTree = "<group>"; };
+		40544EA41D36FC01003A1BB7 /* PoseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoseDetailViewController.swift; sourceTree = "<group>"; };
+		40544EA61D36FC19003A1BB7 /* FlowTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowTableViewController.swift; sourceTree = "<group>"; };
+		40544EA81D36FC5F003A1BB7 /* AddFlowTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFlowTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,26 @@
 		40544E8C1D36D522003A1BB7 /* YogaFlow */ = {
 			isa = PBXGroup;
 			children = (
-				40544E8D1D36D522003A1BB7 /* AppDelegate.swift */,
-				40544E8F1D36D522003A1BB7 /* ViewController.swift */,
 				40544E911D36D522003A1BB7 /* Main.storyboard */,
+				40544EA11D36FAC6003A1BB7 /* View Controllers */,
 				40544E941D36D522003A1BB7 /* Assets.xcassets */,
+				40544E8D1D36D522003A1BB7 /* AppDelegate.swift */,
 				40544E961D36D522003A1BB7 /* LaunchScreen.storyboard */,
 				40544E991D36D522003A1BB7 /* Info.plist */,
 			);
 			path = YogaFlow;
+			sourceTree = "<group>";
+		};
+		40544EA11D36FAC6003A1BB7 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				40544EA21D36FBC2003A1BB7 /* FlowListTableViewController.swift */,
+				40544EA61D36FC19003A1BB7 /* FlowTableViewController.swift */,
+				40544EA81D36FC5F003A1BB7 /* AddFlowTableViewController.swift */,
+				40544E9F1D36FAB0003A1BB7 /* SearchTableViewController.swift */,
+				40544EA41D36FC01003A1BB7 /* PoseDetailViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +155,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40544E901D36D522003A1BB7 /* ViewController.swift in Sources */,
+				40544EA91D36FC5F003A1BB7 /* AddFlowTableViewController.swift in Sources */,
 				40544E8E1D36D522003A1BB7 /* AppDelegate.swift in Sources */,
+				40544EA01D36FAB0003A1BB7 /* SearchTableViewController.swift in Sources */,
+				40544EA51D36FC01003A1BB7 /* PoseDetailViewController.swift in Sources */,
+				40544EA31D36FBC2003A1BB7 /* FlowListTableViewController.swift in Sources */,
+				40544EA71D36FC19003A1BB7 /* FlowTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
