@@ -16,6 +16,7 @@
 		40544EA51D36FC01003A1BB7 /* PoseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40544EA41D36FC01003A1BB7 /* PoseDetailViewController.swift */; };
 		40544EA71D36FC19003A1BB7 /* FlowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40544EA61D36FC19003A1BB7 /* FlowTableViewController.swift */; };
 		40544EA91D36FC5F003A1BB7 /* AddFlowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40544EA81D36FC5F003A1BB7 /* AddFlowTableViewController.swift */; };
+		40544ECF1D383DF7003A1BB7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40544ECD1D383DF6003A1BB7 /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		40544EA41D36FC01003A1BB7 /* PoseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoseDetailViewController.swift; sourceTree = "<group>"; };
 		40544EA61D36FC19003A1BB7 /* FlowTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowTableViewController.swift; sourceTree = "<group>"; };
 		40544EA81D36FC5F003A1BB7 /* AddFlowTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFlowTableViewController.swift; sourceTree = "<group>"; };
+		40544ECE1D383DF7003A1BB7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				40544E911D36D522003A1BB7 /* Main.storyboard */,
+				40544ED01D383DFB003A1BB7 /* Model Objects */,
 				40544EA11D36FAC6003A1BB7 /* View Controllers */,
 				40544E941D36D522003A1BB7 /* Assets.xcassets */,
 				40544E8D1D36D522003A1BB7 /* AppDelegate.swift */,
@@ -82,6 +85,14 @@
 				40544EA41D36FC01003A1BB7 /* PoseDetailViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		40544ED01D383DFB003A1BB7 /* Model Objects */ = {
+			isa = PBXGroup;
+			children = (
+				40544ECD1D383DF6003A1BB7 /* Model.xcdatamodeld */,
+			);
+			name = "Model Objects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +169,7 @@
 				40544EA91D36FC5F003A1BB7 /* AddFlowTableViewController.swift in Sources */,
 				40544E8E1D36D522003A1BB7 /* AppDelegate.swift in Sources */,
 				40544EA01D36FAB0003A1BB7 /* SearchTableViewController.swift in Sources */,
+				40544ECF1D383DF7003A1BB7 /* Model.xcdatamodeld in Sources */,
 				40544EA51D36FC01003A1BB7 /* PoseDetailViewController.swift in Sources */,
 				40544EA31D36FBC2003A1BB7 /* FlowListTableViewController.swift in Sources */,
 				40544EA71D36FC19003A1BB7 /* FlowTableViewController.swift in Sources */,
@@ -312,8 +324,22 @@
 				40544E9E1D36D523003A1BB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		40544ECD1D383DF6003A1BB7 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				40544ECE1D383DF7003A1BB7 /* Model.xcdatamodel */,
+			);
+			currentVersion = 40544ECE1D383DF7003A1BB7 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 40544E821D36D522003A1BB7 /* Project object */;
 }
