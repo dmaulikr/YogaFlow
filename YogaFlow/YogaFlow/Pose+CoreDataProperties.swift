@@ -16,7 +16,7 @@ extension Pose {
 
     @NSManaged var name: String
     @NSManaged var sanskritName: String?
-    @NSManaged var type: String
+    @NSManaged var type: [String]
     @NSManaged var flow: Flow?
 
 }

@@ -12,6 +12,14 @@ import CoreData
 
 class Flow: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
+    convenience init?(name: String, notes: String?, timestamp: NSDate = NSDate(), context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
+        
+        guard let entity = NSEntityDescription.entityForName("Flow", inManagedObjectContext: context) else {return nil}
+        
+        self.init(entity: entity, insertIntoManagedObjectContext: context)
+        
+        self.name = name
+        self.notes = notes
+    }
 
 }

@@ -12,6 +12,14 @@ import CoreData
 
 class Pose: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
+    convenience init?(name: String, sanskritName: String?, type: [String], context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
+        guard let entity = NSEntityDescription.entityForName("Pose", inManagedObjectContext: context) else {return nil}
+        
+        self.init(entity: entity, insertIntoManagedObjectContext: context)
+        
+        self.name = name
+        self.sanskritName = sanskritName
+        self.type = type
+    }
 
 }

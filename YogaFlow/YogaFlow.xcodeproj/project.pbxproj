@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		404351191D397E0B003A7C33 /* PoseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404351181D397E0B003A7C33 /* PoseController.swift */; };
+		4043511C1D397E7C003A7C33 /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4043511B1D397E7C003A7C33 /* FlowController.swift */; };
+		4043511E1D397ECB003A7C33 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4043511D1D397ECB003A7C33 /* NetworkController.swift */; };
 		40544E8E1D36D522003A1BB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40544E8D1D36D522003A1BB7 /* AppDelegate.swift */; };
 		40544E931D36D522003A1BB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40544E911D36D522003A1BB7 /* Main.storyboard */; };
 		40544E951D36D522003A1BB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40544E941D36D522003A1BB7 /* Assets.xcassets */; };
@@ -21,9 +24,13 @@
 		40544F061D395EF1003A1BB7 /* Pose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40544F021D395EF1003A1BB7 /* Pose.swift */; };
 		40544F071D395EF1003A1BB7 /* Flow+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40544F031D395EF1003A1BB7 /* Flow+CoreDataProperties.swift */; };
 		40544F081D395EF1003A1BB7 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40544F041D395EF1003A1BB7 /* Flow.swift */; };
+		40544F0A1D395F93003A1BB7 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40544F091D395F93003A1BB7 /* Stack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		404351181D397E0B003A7C33 /* PoseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoseController.swift; sourceTree = "<group>"; };
+		4043511B1D397E7C003A7C33 /* FlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
+		4043511D1D397ECB003A7C33 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		40544E8A1D36D522003A1BB7 /* YogaFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YogaFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40544E8D1D36D522003A1BB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40544E921D36D522003A1BB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,6 +47,7 @@
 		40544F021D395EF1003A1BB7 /* Pose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pose.swift; sourceTree = "<group>"; };
 		40544F031D395EF1003A1BB7 /* Flow+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Flow+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		40544F041D395EF1003A1BB7 /* Flow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
+		40544F091D395F93003A1BB7 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4043511A1D397E2D003A7C33 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				404351181D397E0B003A7C33 /* PoseController.swift */,
+				4043511B1D397E7C003A7C33 /* FlowController.swift */,
+				4043511D1D397ECB003A7C33 /* NetworkController.swift */,
+			);
+			name = "Model Controllers";
+			sourceTree = "<group>";
+		};
 		40544E811D36D522003A1BB7 = {
 			isa = PBXGroup;
 			children = (
@@ -74,8 +92,10 @@
 			children = (
 				40544E911D36D522003A1BB7 /* Main.storyboard */,
 				40544ED01D383DFB003A1BB7 /* Model Objects */,
+				4043511A1D397E2D003A7C33 /* Model Controllers */,
 				40544EA11D36FAC6003A1BB7 /* View Controllers */,
 				40544E941D36D522003A1BB7 /* Assets.xcassets */,
+				40544F091D395F93003A1BB7 /* Stack.swift */,
 				40544E8D1D36D522003A1BB7 /* AppDelegate.swift */,
 				40544E961D36D522003A1BB7 /* LaunchScreen.storyboard */,
 				40544E991D36D522003A1BB7 /* Info.plist */,
@@ -182,8 +202,12 @@
 				40544E8E1D36D522003A1BB7 /* AppDelegate.swift in Sources */,
 				40544F051D395EF1003A1BB7 /* Pose+CoreDataProperties.swift in Sources */,
 				40544EA01D36FAB0003A1BB7 /* SearchTableViewController.swift in Sources */,
+				40544F0A1D395F93003A1BB7 /* Stack.swift in Sources */,
+				4043511E1D397ECB003A7C33 /* NetworkController.swift in Sources */,
 				40544ECF1D383DF7003A1BB7 /* Model.xcdatamodeld in Sources */,
 				40544EA51D36FC01003A1BB7 /* PoseDetailViewController.swift in Sources */,
+				4043511C1D397E7C003A7C33 /* FlowController.swift in Sources */,
+				404351191D397E0B003A7C33 /* PoseController.swift in Sources */,
 				40544F061D395EF1003A1BB7 /* Pose.swift in Sources */,
 				40544F081D395EF1003A1BB7 /* Flow.swift in Sources */,
 				40544F071D395EF1003A1BB7 /* Flow+CoreDataProperties.swift in Sources */,

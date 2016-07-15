@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Flow List Table View Controller-->
@@ -160,12 +161,18 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wna-tq-B6p">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wna-tq-B6p">
                                             <rect key="frame" x="8" y="7" width="584" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="wna-tq-B6p" secondAttribute="bottom" constant="-2" id="AvH-Bh-32x"/>
+                                        <constraint firstItem="wna-tq-B6p" firstAttribute="leading" secondItem="vqO-7u-QhD" secondAttribute="leadingMargin" id="MPr-ZE-6PZ"/>
+                                        <constraint firstItem="wna-tq-B6p" firstAttribute="trailing" secondItem="vqO-7u-QhD" secondAttribute="trailingMargin" id="MdB-go-bhW"/>
+                                        <constraint firstItem="wna-tq-B6p" firstAttribute="top" secondItem="vqO-7u-QhD" secondAttribute="topMargin" constant="-1" id="rA6-41-psg"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="2sv-gH-gxe" kind="show" id="BgS-bb-JMY"/>
@@ -314,6 +321,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Kzu-no-lIW"/>
+        <segue reference="bm0-Aj-BWh"/>
     </inferredMetricsTieBreakers>
 </document>
