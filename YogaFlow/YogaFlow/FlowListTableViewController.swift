@@ -17,12 +17,13 @@ class FlowListTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
+        /*
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = view.bounds
         gradient.colors = [UIColor(red: 0/255, green: 123/255, blue: 255/255, alpha: 1).CGColor, UIColor.cyanColor().CGColor]
         
         view.layer.insertSublayer(gradient, atIndex: 0)
-        
+        */
         
         
         navigationItem.title = "Yoga Flow"

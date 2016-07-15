@@ -13,7 +13,6 @@ import CoreData
 class Flow: NSManagedObject {
 
     convenience init?(name: String, notes: String?, timestamp: NSDate = NSDate(), context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
-        
         guard let entity = NSEntityDescription.entityForName("Flow", inManagedObjectContext: context) else {return nil}
         
         self.init(entity: entity, insertIntoManagedObjectContext: context)

@@ -4,16 +4,21 @@
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="timestamp" attributeType="Date" syncable="YES"/>
-        <relationship name="poses" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Pose" inverseName="flow" inverseEntity="Pose" syncable="YES"/>
+        <relationship name="poses" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Pose" inverseName="flow" inverseEntity="Pose" syncable="YES"/>
     </entity>
     <entity name="Pose" representedClassName=".Pose" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="sanskritName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="type" attributeType="String" syncable="YES"/>
         <relationship name="flow" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Flow" inverseName="poses" inverseEntity="Flow" syncable="YES"/>
+        <relationship name="types" toMany="YES" deletionRule="Nullify" destinationEntity="Type" inverseName="poses" inverseEntity="Type" syncable="YES"/>
+    </entity>
+    <entity name="Type" representedClassName=".Type" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="poses" toMany="YES" deletionRule="Nullify" destinationEntity="Pose" inverseName="types" inverseEntity="Pose" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Flow" positionX="-54" positionY="18" width="128" height="30"/>
-        <element name="Pose" positionX="-63" positionY="-18" width="128" height="30"/>
+        <element name="Flow" positionX="-54" positionY="18" width="128" height="105"/>
+        <element name="Pose" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Type" positionX="-54" positionY="36" width="128" height="75"/>
     </elements>
 </model>

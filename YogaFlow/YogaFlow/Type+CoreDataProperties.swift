@@ -1,5 +1,5 @@
 //
-//  Pose+CoreDataProperties.swift
+//  Type+CoreDataProperties.swift
 //  YogaFlow
 //
 //  Created by Emily Mearns on 7/15/16.
@@ -12,11 +12,9 @@
 import Foundation
 import CoreData
 
-extension Pose {
+extension Type {
 
     @NSManaged var name: String
-    @NSManaged var sanskritName: String?
-    @NSManaged var flow: Flow?
-    @NSManaged var types: NSSet
+    @NSManaged var poses: NSSet
 
 }
