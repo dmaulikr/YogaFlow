@@ -37,7 +37,6 @@ class Pose: NSManagedObject {
         
         let types = typeArray.flatMap { Type(name: $0) }
         self.types = NSOrderedSet(array: types)
-        
     }
 }
 
