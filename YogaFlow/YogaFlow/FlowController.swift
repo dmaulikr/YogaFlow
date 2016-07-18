@@ -10,6 +10,29 @@ import Foundation
 
 class FlowController {
     
+    func createFlow(name: String, notes: String?, poses: [Pose], timestamp: NSDate = NSDate()) {
+        _ = Flow(name: name, notes: notes, poses: poses)
+        saveToPersistentStore()
+    }
     
+    func updateFlow(flow: Flow, name: String, notes: String?, poses: [Pose]) {
+        flow.name = name
+        flow.notes = notes
+        flow.poses = poses
+        saveToPersistentStore()
+    }
+    
+    func deleteFlow(flow: Flow) {
+        flow.managedObjectContext?.deleteObject(flow)
+        saveToPersistentStore()
+    }
+    
+    func saveToPersistentStore() {
+        do {
+            try Stack.sharedStack.managedObjectContext.save()
+        } catch {
+            print("The flow could not be saved.")
+        }
+    }
     
 }

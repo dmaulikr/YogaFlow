@@ -12,10 +12,14 @@ import CoreData
 
 class Pose: NSManagedObject {
 
-    convenience init?(dictionary: [String: AnyObject], context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
-        guard let entity = NSEntityDescription.entityForName("Pose", inManagedObjectContext: context) else {return nil}
-        self.init(entity: entity, insertIntoManagedObjectContext: context)
+    let name: String
+    let sanskritName: String
+    
+    init?(dictionary: [String: AnyObject]) {
+        guard let name = dictionary["name"] as? String, sanskritName = dictionary["sanskritName"] as? String else {return nil}
         
+        self.name = name
+        self.sanskritName = sanskritName
         
     }
 

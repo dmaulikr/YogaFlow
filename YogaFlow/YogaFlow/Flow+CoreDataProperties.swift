@@ -2,7 +2,7 @@
 //  Flow+CoreDataProperties.swift
 //  YogaFlow
 //
-//  Created by Emily Mearns on 7/15/16.
+//  Created by Emily Mearns on 7/18/16.
 //  Copyright © 2016 Emily Mearns. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -17,6 +17,6 @@ extension Flow {
     @NSManaged var name: String
     @NSManaged var notes: String?
     @NSManaged var timestamp: NSDate
-    @NSManaged var poses: NSOrderedSet?
+    @NSManaged var poses: NSOrderedSet
 
 }

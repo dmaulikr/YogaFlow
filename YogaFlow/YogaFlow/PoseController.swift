@@ -10,6 +10,12 @@ import Foundation
 
 class PoseController {
     
+    static func fetchPoses(completion: (poses: [Pose]?) -> Void) {
+        
+    }
     
+    func searchPoses(searchTerm: String) -> [Pose] {
+        
+    }
     
 }

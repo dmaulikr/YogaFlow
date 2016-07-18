@@ -15,16 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var navigationbar = UINavigationBar()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
-        let gradient = CAGradientLayer()
-        gradient.frame = navigationbar.bounds
-        gradient.colors = [UIColor(red: 0/255, green: 123/255, blue: 255/255, alpha: 1).CGColor, UIColor.cyanColor().CGColor]
-        gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
-        gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
-        
-        
-        
-//        UINavigationBar.appearance().barTintColor = UIColor(red: 0/255, green: 123/255, blue: 255/255, alpha: 1)
+
+        UINavigationBar.appearance().barTintColor = UIColor(red: 0/255, green: 123/255, blue: 255/255, alpha: 1)
         UINavigationBar.appearance().tintColor = .whiteColor()
         
         return true
