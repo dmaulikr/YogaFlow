@@ -19,23 +19,33 @@ class FlowTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 3
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Poses"
+        if section == 0 {
+            return "Poses"
+        } else if section == 1 {
+            return "Notes"
+        } else {
+            return "Date Created"
+        }
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return poses.count
+        if section == 0 {
+            return poses.count
+        } else {
+            return 1
+        }
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("poseCell", forIndexPath: indexPath)
 
-        let pose = poses[indexPath.row]
-        cell.textLabel?.text = pose.name
-        cell.detailTextLabel?.text = pose.sanskritName
+//        let pose = poses[indexPath.row]
+//        cell.textLabel?.text = pose.name
+//        cell.detailTextLabel?.text = pose.sanskritName
 
         return cell
     }

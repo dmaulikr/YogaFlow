@@ -13,9 +13,11 @@ class AddFlowTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    
+    // MARK: - Buttons
+    
+    @IBAction func saveBtnPressed(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
     // MARK: - Table view data source
@@ -23,9 +25,18 @@ class AddFlowTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 3
     }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Name"
+        } else if section == 1 {
+            return "Notes"
+        } else {
+            return "Poses"
+        }
+    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         if section == 0 {
             return 1
         } else if section == 1 {
@@ -35,14 +46,24 @@ class AddFlowTableViewController: UITableViewController {
         }
         
     }
-
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        switch indexPath.section {
+        case 0, 1:
+            let cell = tableView.dequeueReusableCellWithIdentifier("inputCell", forIndexPath: indexPath)
+            
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCellWithIdentifier("poseCell", forIndexPath: indexPath)
+            
+            return cell
+        }
+        
+        
 
         
 
-        return cell
+        
     }
 
 
