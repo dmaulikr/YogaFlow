@@ -14,9 +14,10 @@ class Type: NSManagedObject {
 
     convenience init?(name: String, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
         guard let entity = NSEntityDescription.entityForName("Type", inManagedObjectContext: context) else {return nil}
+        
         self.init(entity: entity, insertIntoManagedObjectContext: context)
         
         self.name = name
     }
-
+    
 }

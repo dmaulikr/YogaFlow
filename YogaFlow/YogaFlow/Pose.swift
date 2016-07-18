@@ -2,7 +2,7 @@
 //  Pose.swift
 //  YogaFlow
 //
-//  Created by Emily Mearns on 7/15/16.
+//  Created by Emily Mearns on 7/18/16.
 //  Copyright © 2016 Emily Mearns. All rights reserved.
 //
 
@@ -11,16 +11,42 @@ import CoreData
 
 
 class Pose: NSManagedObject {
-
-    let name: String
-    let sanskritName: String
     
-    init?(dictionary: [String: AnyObject]) {
-        guard let name = dictionary["name"] as? String, sanskritName = dictionary["sanskritName"] as? String else {return nil}
+    //    convenience init(name: String, sanskritName: String?, types: [Type], context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
+    //        guard let entity = NSEntityDescription.entityForName("Pose", inManagedObjectContext: context) else {
+    //            return
+    //        }
+    //        self.init(entity: entity, insertIntoManagedObjectContext: context)
+    //
+    //        self.name = name
+    //        self.sanskritName = sanskritName
+    //        self.types = NSOrderedSet(array: types)
+    //        self.flow = nil
+    //    }
+    
+    convenience init?(name: String, dictionary: [String: AnyObject], flow: Flow? = nil, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
+        guard let entity = NSEntityDescription.entityForName("Pose", inManagedObjectContext: context),
+            typeArray = dictionary["type"] as? [String]
+            else {return nil}
+        
+        self.init(entity: entity, insertIntoManagedObjectContext: context)
         
         self.name = name
-        self.sanskritName = sanskritName
+        self.sanskritName = dictionary["sanskritName"] as? String ?? nil
+        self.flow = flow
+        
+        let types = typeArray.flatMap { Type(name: $0) }
+        self.types = NSOrderedSet(array: types)
         
     }
-
 }
+
+/* 
+ "big_toe_pose": {
+    "sanskrit_name": "Padangusthasana",
+    "type": [
+        "forward bend",
+        "standing"
+    ]
+ }
+ */

@@ -12,10 +12,10 @@
 		4043511E1D397ECB003A7C33 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4043511D1D397ECB003A7C33 /* NetworkController.swift */; };
 		404351211D399BCA003A7C33 /* Type+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4043511F1D399BCA003A7C33 /* Type+CoreDataProperties.swift */; };
 		404351221D399BCA003A7C33 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404351201D399BCA003A7C33 /* Type.swift */; };
-		404351251D399BF4003A7C33 /* Pose+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404351231D399BF4003A7C33 /* Pose+CoreDataProperties.swift */; };
-		404351261D399BF4003A7C33 /* Pose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404351241D399BF4003A7C33 /* Pose.swift */; };
 		404351541D3D4289003A7C33 /* Flow+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404351521D3D4289003A7C33 /* Flow+CoreDataProperties.swift */; };
 		404351551D3D4289003A7C33 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404351531D3D4289003A7C33 /* Flow.swift */; };
+		404351581D3D4889003A7C33 /* Pose+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404351561D3D4889003A7C33 /* Pose+CoreDataProperties.swift */; };
+		404351591D3D4889003A7C33 /* Pose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404351571D3D4889003A7C33 /* Pose.swift */; };
 		40544E8E1D36D522003A1BB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40544E8D1D36D522003A1BB7 /* AppDelegate.swift */; };
 		40544E931D36D522003A1BB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40544E911D36D522003A1BB7 /* Main.storyboard */; };
 		40544E951D36D522003A1BB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40544E941D36D522003A1BB7 /* Assets.xcassets */; };
@@ -35,10 +35,10 @@
 		4043511D1D397ECB003A7C33 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		4043511F1D399BCA003A7C33 /* Type+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Type+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		404351201D399BCA003A7C33 /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
-		404351231D399BF4003A7C33 /* Pose+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Pose+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		404351241D399BF4003A7C33 /* Pose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pose.swift; sourceTree = "<group>"; };
 		404351521D3D4289003A7C33 /* Flow+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Flow+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		404351531D3D4289003A7C33 /* Flow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
+		404351561D3D4889003A7C33 /* Pose+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Pose+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		404351571D3D4889003A7C33 /* Pose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pose.swift; sourceTree = "<group>"; };
 		40544E8A1D36D522003A1BB7 /* YogaFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YogaFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40544E8D1D36D522003A1BB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40544E921D36D522003A1BB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -123,8 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				40544ECD1D383DF6003A1BB7 /* Model.xcdatamodeld */,
-				404351231D399BF4003A7C33 /* Pose+CoreDataProperties.swift */,
-				404351241D399BF4003A7C33 /* Pose.swift */,
+				404351561D3D4889003A7C33 /* Pose+CoreDataProperties.swift */,
+				404351571D3D4889003A7C33 /* Pose.swift */,
 				404351521D3D4289003A7C33 /* Flow+CoreDataProperties.swift */,
 				404351531D3D4289003A7C33 /* Flow.swift */,
 				4043511F1D399BCA003A7C33 /* Type+CoreDataProperties.swift */,
@@ -213,11 +213,11 @@
 				404351211D399BCA003A7C33 /* Type+CoreDataProperties.swift in Sources */,
 				4043511E1D397ECB003A7C33 /* NetworkController.swift in Sources */,
 				40544ECF1D383DF7003A1BB7 /* Model.xcdatamodeld in Sources */,
+				404351591D3D4889003A7C33 /* Pose.swift in Sources */,
 				40544EA51D36FC01003A1BB7 /* PoseDetailViewController.swift in Sources */,
-				404351261D399BF4003A7C33 /* Pose.swift in Sources */,
+				404351581D3D4889003A7C33 /* Pose+CoreDataProperties.swift in Sources */,
 				4043511C1D397E7C003A7C33 /* FlowController.swift in Sources */,
 				404351541D3D4289003A7C33 /* Flow+CoreDataProperties.swift in Sources */,
-				404351251D399BF4003A7C33 /* Pose+CoreDataProperties.swift in Sources */,
 				404351191D397E0B003A7C33 /* PoseController.swift in Sources */,
 				40544EA31D36FBC2003A1BB7 /* FlowListTableViewController.swift in Sources */,
 				40544EA71D36FC19003A1BB7 /* FlowTableViewController.swift in Sources */,

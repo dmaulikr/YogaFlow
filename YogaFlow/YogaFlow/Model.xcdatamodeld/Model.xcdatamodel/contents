@@ -10,7 +10,7 @@
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="sanskritName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="flow" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Flow" inverseName="poses" inverseEntity="Flow" syncable="YES"/>
-        <relationship name="types" toMany="YES" deletionRule="Nullify" destinationEntity="Type" inverseName="poses" inverseEntity="Type" syncable="YES"/>
+        <relationship name="types" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Type" inverseName="poses" inverseEntity="Type" syncable="YES"/>
     </entity>
     <entity name="Type" representedClassName=".Type" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>

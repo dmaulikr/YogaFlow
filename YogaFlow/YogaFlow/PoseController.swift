@@ -15,7 +15,7 @@ class PoseController {
     }
     
     func searchPoses(searchTerm: String) -> [Pose] {
-        
+        return []
     }
     
 }

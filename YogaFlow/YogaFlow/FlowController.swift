@@ -16,10 +16,7 @@ class FlowController {
     }
     
     func updateFlow(flow: Flow, name: String, notes: String?, poses: [Pose]) {
-        flow.name = name
-        flow.notes = notes
-        flow.poses = poses
-        saveToPersistentStore()
+        
     }
     
     func deleteFlow(flow: Flow) {
