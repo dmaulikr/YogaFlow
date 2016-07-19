@@ -18,6 +18,7 @@
 		404351591D3D4889003A7C33 /* Pose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404351571D3D4889003A7C33 /* Pose.swift */; };
 		4043515B1D3D8C89003A7C33 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4043515A1D3D8C89003A7C33 /* SearchResultTableViewCell.swift */; };
 		4043515E1D3D8F42003A7C33 /* UserInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4043515D1D3D8F42003A7C33 /* UserInputTableViewCell.swift */; };
+		404351601D3EDAD5003A7C33 /* DateHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4043515F1D3EDAD4003A7C33 /* DateHelpers.swift */; };
 		40544E8E1D36D522003A1BB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40544E8D1D36D522003A1BB7 /* AppDelegate.swift */; };
 		40544E931D36D522003A1BB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40544E911D36D522003A1BB7 /* Main.storyboard */; };
 		40544E951D36D522003A1BB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40544E941D36D522003A1BB7 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		404351571D3D4889003A7C33 /* Pose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pose.swift; sourceTree = "<group>"; };
 		4043515A1D3D8C89003A7C33 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		4043515D1D3D8F42003A7C33 /* UserInputTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInputTableViewCell.swift; sourceTree = "<group>"; };
+		4043515F1D3EDAD4003A7C33 /* DateHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelpers.swift; sourceTree = "<group>"; };
 		40544E8A1D36D522003A1BB7 /* YogaFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YogaFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40544E8D1D36D522003A1BB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40544E921D36D522003A1BB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,6 +90,15 @@
 			name = "Custom Cell Controllers";
 			sourceTree = "<group>";
 		};
+		404351611D3EDADA003A7C33 /* Helper Files */ = {
+			isa = PBXGroup;
+			children = (
+				40544F091D395F93003A1BB7 /* Stack.swift */,
+				4043515F1D3EDAD4003A7C33 /* DateHelpers.swift */,
+			);
+			name = "Helper Files";
+			sourceTree = "<group>";
+		};
 		40544E811D36D522003A1BB7 = {
 			isa = PBXGroup;
 			children = (
@@ -112,8 +123,8 @@
 				4043511A1D397E2D003A7C33 /* Model Controllers */,
 				4043515C1D3D8C8D003A7C33 /* Custom Cell Controllers */,
 				40544EA11D36FAC6003A1BB7 /* View Controllers */,
+				404351611D3EDADA003A7C33 /* Helper Files */,
 				40544E941D36D522003A1BB7 /* Assets.xcassets */,
-				40544F091D395F93003A1BB7 /* Stack.swift */,
 				40544E8D1D36D522003A1BB7 /* AppDelegate.swift */,
 				40544E961D36D522003A1BB7 /* LaunchScreen.storyboard */,
 				40544E991D36D522003A1BB7 /* Info.plist */,
@@ -231,6 +242,7 @@
 				40544ECF1D383DF7003A1BB7 /* Model.xcdatamodeld in Sources */,
 				404351591D3D4889003A7C33 /* Pose.swift in Sources */,
 				40544EA51D36FC01003A1BB7 /* PoseDetailViewController.swift in Sources */,
+				404351601D3EDAD5003A7C33 /* DateHelpers.swift in Sources */,
 				404351581D3D4889003A7C33 /* Pose+CoreDataProperties.swift in Sources */,
 				4043511C1D397E7C003A7C33 /* FlowController.swift in Sources */,
 				404351541D3D4289003A7C33 /* Flow+CoreDataProperties.swift in Sources */,

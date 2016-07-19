@@ -21,17 +21,22 @@ class FlowListTableViewController: UITableViewController {
 
         navigationItem.title = "Yoga Flow"
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
+        flows = FlowController.sharedController.mockFlows
     }
 
     // MARK: - Table view data source
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return flows.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("flowCell", forIndexPath: indexPath)
  
+        let flow = flows[indexPath.row]
+        cell.textLabel?.text = flow.name
+        cell.detailTextLabel?.text = flow.timestamp.stringValue()
 
         return cell
     }

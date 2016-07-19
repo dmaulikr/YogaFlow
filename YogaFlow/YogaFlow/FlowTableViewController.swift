@@ -34,20 +34,27 @@ class FlowTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return poses.count
+            return 2
         } else {
             return 1
         }
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("poseCell", forIndexPath: indexPath)
-
-//        let pose = poses[indexPath.row]
-//        cell.textLabel?.text = pose.name
-//        cell.detailTextLabel?.text = pose.sanskritName
-
-        return cell
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCellWithIdentifier("poseCell", forIndexPath: indexPath)
+            cell.textLabel?.text = "Pose Name"
+            cell.detailTextLabel?.text = "Sanskrit Name"
+            
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCellWithIdentifier("basicCell", forIndexPath: indexPath)
+            
+            return cell
+        }
+        
+        
     }
 
     /*

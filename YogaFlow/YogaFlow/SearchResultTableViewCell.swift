@@ -10,9 +10,22 @@ import UIKit
 
 class SearchResultTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var poseNameLabel: UILabel!
+    @IBOutlet weak var sanskritNameLabel: UILabel!
+    
+    @IBAction func addButtonPressed(sender: AnyObject) {
+        print("Add button pressed")
+    }
+    
+    func updateCellWithPose() {
+        poseNameLabel.text = "Pose Name"
+        sanskritNameLabel.text = "Sanskrit Name"
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

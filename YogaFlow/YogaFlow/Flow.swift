@@ -19,6 +19,7 @@ class Flow: NSManagedObject {
         
         self.name = name
         self.notes = notes
+        self.timestamp = timestamp
     }
     
 }

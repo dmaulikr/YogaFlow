@@ -9,7 +9,7 @@
 import UIKit
 
 class AddFlowTableViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -17,8 +17,11 @@ class AddFlowTableViewController: UITableViewController {
     // MARK: - Buttons
     
     @IBAction func saveBtnPressed(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        
     }
+    
+    // MARK: - Functions
+
 
     // MARK: - Table view data source
 
@@ -35,6 +38,10 @@ class AddFlowTableViewController: UITableViewController {
             return "Poses"
         }
     }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 35
+    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
@@ -44,7 +51,6 @@ class AddFlowTableViewController: UITableViewController {
         } else {
             return 0
         }
-        
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -58,12 +64,6 @@ class AddFlowTableViewController: UITableViewController {
             
             return cell
         }
-        
-        
-
-        
-
-        
     }
 
 
