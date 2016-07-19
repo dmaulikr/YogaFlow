@@ -10,12 +10,53 @@ import Foundation
 
 class PoseController {
     
-    static func fetchPoses(completion: (poses: [Pose]?) -> Void) {
+    static let baseUrl = "https://yoga-api.firebaseio.com/poses.json"
+    
+    static func fetchPoses(completion: (poses: [Pose]) -> Void) {
+        guard let url = NSURL(string: baseUrl) else {
+            completion(poses: [])
+            return
+        }
         
+        NetworkController.performRequestForURL(url, httpMethod: .Get) { (data, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                completion(poses: [])
+            }
+            guard let data = data,
+                jsonDictionary = (try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)) as? [String: AnyObject] else {
+                completion(poses: [])
+                return
+            }
+            let poses = jsonDictionary.flatMap { Pose(name: $0, dictionary: $1 as! [String: AnyObject]) }
+            completion(poses: poses)
+        }
     }
     
-    func searchPoses(searchTerm: String) -> [Pose] {
-        return []
+    static func searchPoses(poses: [Pose], searchTerm: String) -> [Pose] {
+        var sortedPoses: [Pose] = []
+        
+        fetchPoses { (poses) in
+            for pose in poses {
+                if pose.name.containsString(searchTerm) {
+                    sortedPoses.append(pose)
+                }
+                if checkIfPoseTypesContainsTerm(pose, term: searchTerm) == true {
+                    sortedPoses.append(pose)
+                }
+            }
+        }
+        return sortedPoses
     }
     
+    static func checkIfPoseTypesContainsTerm(pose: Pose, term: String) -> Bool {
+        for poseType in pose.types {
+            if let type = poseType as? Type {
+                if type.name.containsString(term) {
+                    return true
+                }
+            }
+        }
+        return false
+    }
 }

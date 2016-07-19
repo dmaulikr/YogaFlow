@@ -9,15 +9,16 @@
 import UIKit
 
 class SearchTableViewController: UITableViewController {
+    
+    var poses = [Pose]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        PoseController.fetchPoses { (poses) in
+            self.poses = poses
+            self.tableView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
