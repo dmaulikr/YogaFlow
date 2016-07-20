@@ -10,10 +10,17 @@ import UIKit
 
 class FlowTableViewController: UITableViewController {
 
-    var poses: [Pose] = []
+    var flow: Flow?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        if let flow = flow {
+            self.title = flow.name
+        }
     }
 
     // MARK: - Table view data source
@@ -33,8 +40,9 @@ class FlowTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let flow = flow else {return 0}
         if section == 0 {
-            return 2
+            return flow.poses.count
         } else {
             return 1
         }
@@ -44,13 +52,22 @@ class FlowTableViewController: UITableViewController {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCellWithIdentifier("poseCell", forIndexPath: indexPath)
-            cell.textLabel?.text = "Pose Name"
-            cell.detailTextLabel?.text = "Sanskrit Name"
-            
+            if let pose = flow?.poses[indexPath.row] as? Pose {
+                cell.textLabel?.text = pose.name
+                cell.detailTextLabel?.text = pose.sanskritName
+            }
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCellWithIdentifier("basicCell", forIndexPath: indexPath)
+            if let flow = flow {
+                cell.textLabel?.text = flow.notes
+            }
             return cell
         default:
             let cell = tableView.dequeueReusableCellWithIdentifier("basicCell", forIndexPath: indexPath)
-            
+            if let flow = flow {
+                cell.textLabel?.text = flow.timestamp.stringValue()
+            }
             return cell
         }
         
