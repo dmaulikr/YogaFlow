@@ -88,6 +88,13 @@ class FlowTableViewController: UITableViewController {
                 poseDetailVC?.pose = pose
             }
         }
+        
+        if segue.identifier == "toAddFlowViaDetail" {
+            if let flow = flow {
+                let addFlowTVC = segue.destinationViewController as? AddFlowTableViewController
+                addFlowTVC?.flow = flow
+            }
+        }
     }
     
     

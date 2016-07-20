@@ -33,7 +33,7 @@ class PoseDetailViewController: UIViewController {
     func updateWithPose(pose: Pose) {
         poseNameLabel.text = pose.name
         sanskritNameLabel.text = pose.sanskritName
-        poseTypeLabel.text = "Type: \(pose.types)"
+        poseTypeLabel.text = "Type: \(pose.types.array.flatMap({$0.name}))"
     }
 
 }

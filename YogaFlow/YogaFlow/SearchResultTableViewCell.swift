@@ -9,7 +9,9 @@
 import UIKit
 
 class SearchResultTableViewCell: UITableViewCell {
-
+    
+    var poses = [Pose]()
+    
     @IBOutlet weak var poseNameLabel: UILabel!
     @IBOutlet weak var sanskritNameLabel: UILabel!
     
@@ -17,9 +19,9 @@ class SearchResultTableViewCell: UITableViewCell {
         print("Add button pressed")
     }
     
-    func updateCellWithPose() {
-        poseNameLabel.text = "Pose Name"
-        sanskritNameLabel.text = "Sanskrit Name"
+    func updateCellWithPose(pose: Pose) {
+        poseNameLabel.text = pose.name
+        sanskritNameLabel.text = pose.sanskritName
     }
     
     override func awakeFromNib() {
@@ -27,11 +29,11 @@ class SearchResultTableViewCell: UITableViewCell {
         
         
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }

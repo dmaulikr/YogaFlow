@@ -10,8 +10,14 @@ import UIKit
 
 class AddFlowTableViewController: UITableViewController {
     
+    var flow: Flow?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let flow = flow {
+            updateWithFlow(flow)
+        }
     }
     
     // MARK: - Buttons
@@ -21,6 +27,10 @@ class AddFlowTableViewController: UITableViewController {
     }
     
     // MARK: - Functions
+    
+    func updateWithFlow(flow: Flow) {
+        
+    }
 
 
     // MARK: - Table view data source
