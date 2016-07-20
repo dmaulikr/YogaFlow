@@ -18,5 +18,5 @@ extension Pose {
     @NSManaged var sanskritName: String?
     @NSManaged var flow: Flow?
     @NSManaged var types: NSOrderedSet
-
+    
 }

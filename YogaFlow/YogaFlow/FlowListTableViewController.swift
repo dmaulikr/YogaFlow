@@ -74,7 +74,7 @@ class FlowListTableViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toFlowDetail", let indexPath = tableView.indexPathForSelectedRow {
-            let flow = FlowController.sharedController.flows[indexPath.row]
+            let flow = flows[indexPath.row]
             let flowTVC = segue.destinationViewController as? FlowTableViewController
             flowTVC?.flow = flow
         }

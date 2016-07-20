@@ -12,27 +12,27 @@ import CoreData
 
 class Pose: NSManagedObject {
     
-    //    convenience init(name: String, sanskritName: String?, types: [Type], context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
-    //        guard let entity = NSEntityDescription.entityForName("Pose", inManagedObjectContext: context) else {
-    //            return
-    //        }
-    //        self.init(entity: entity, insertIntoManagedObjectContext: context)
-    //
-    //        self.name = name
-    //        self.sanskritName = sanskritName
-    //        self.types = NSOrderedSet(array: types)
-    //        self.flow = nil
-    //    }
+        convenience init(name: String, sanskritName: String?, types: [Type], context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
+            guard let entity = NSEntityDescription.entityForName("Pose", inManagedObjectContext: context) else {
+                fatalError("Could not initialize Pose")
+            }
+            self.init(entity: entity, insertIntoManagedObjectContext: context)
     
-    convenience init?(name: String, dictionary: [String: AnyObject], flow: Flow? = nil, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
+            self.name = name
+            self.sanskritName = sanskritName
+            self.types = NSOrderedSet(array: types)
+            self.flow = nil
+        }
+    
+    convenience init(name: String, dictionary: [String: AnyObject], flow: Flow? = nil, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
         guard let entity = NSEntityDescription.entityForName("Pose", inManagedObjectContext: context),
             typeArray = dictionary["type"] as? [String]
-            else {return nil}
+            else { fatalError("Could not initialize Pose") }
         
         self.init(entity: entity, insertIntoManagedObjectContext: context)
         
         self.name = name
-        self.sanskritName = dictionary["sanskritName"] as? String ?? nil
+        self.sanskritName = dictionary["sanskrit_name"] as? String ?? nil
         self.flow = flow
         
         let types = typeArray.flatMap { Type(name: $0) }

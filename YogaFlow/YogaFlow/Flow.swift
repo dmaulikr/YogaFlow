@@ -12,11 +12,12 @@ import CoreData
 
 class Flow: NSManagedObject {
     
-    convenience init?(name: String, notes: String?, poses: [Pose], timestamp: NSDate = NSDate(), context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
-        guard let entity = NSEntityDescription.entityForName("Flow", inManagedObjectContext: context) else {return nil}
+    convenience init(name: String, notes: String?, poses: [Pose], timestamp: NSDate = NSDate(), context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
+        guard let entity = NSEntityDescription.entityForName("Flow", inManagedObjectContext: context) else { fatalError("Could not initialize Pose") }
         
         self.init(entity: entity, insertIntoManagedObjectContext: context)
         
+        self.poses = NSOrderedSet(array: poses)
         self.name = name
         self.notes = notes
         self.timestamp = timestamp
