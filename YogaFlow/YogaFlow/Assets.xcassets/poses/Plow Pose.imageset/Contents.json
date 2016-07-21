@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "plow_pose.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "plow_pose.jpg",
       "scale" : "2x"
     },
     {
