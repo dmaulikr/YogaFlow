@@ -20,10 +20,10 @@ class FlowController {
     }
     
     var mockFlows: [Flow] {
-        let pose1 = Pose(name: "Big Toe Pose", dictionary: ["sanskrit_name": "Padangusthasana", "type": ["Core", "Seated"]])
-        let pose2 = Pose(name: "Upward Plank Pose", dictionary: ["sanskrit_name": "Purvottanasana", "type": ["Strengthening"]])
-        let pose3 = Pose(name: "Scale Pose", dictionary: ["sanskrit_name": "Tolasana", "type": ["Arm Balance", "Core"]])
-        let pose4 = Pose(name: "Pigeon Pose", dictionary: ["sanskrit_name": "Kapotasana", "type": ["Backbend"]])
+        let pose1 = Pose(name: "Big Toe Pose", dictionary: ["Sanskrit Name": "Padangusthasana", "Type": ["Core", "Seated"]])
+        let pose2 = Pose(name: "Upward Plank Pose", dictionary: ["Sanskrit Name": "Purvottanasana", "Type": ["Strengthening"]])
+        let pose3 = Pose(name: "Scale Pose", dictionary: ["Sanskrit Name": "Tolasana", "Type": ["Arm Balance", "Core"]])
+        let pose4 = Pose(name: "Pigeon Pose", dictionary: ["Sanskrit Name": "Kapotasana", "Type": ["Backbend"]])
         let flow1 = Flow(name: "Sunrise", notes: "First thing in the AM", poses: [pose1, pose2])
         let flow2 = Flow(name: "Sunset", notes: "Last thing in the PM", poses: [pose3, pose4])
         return [flow1, flow2]

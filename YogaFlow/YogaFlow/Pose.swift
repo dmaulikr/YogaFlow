@@ -26,17 +26,17 @@ class Pose: NSManagedObject {
     
     convenience init(name: String, dictionary: [String: AnyObject], flow: Flow? = nil, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext) {
         guard let entity = NSEntityDescription.entityForName("Pose", inManagedObjectContext: context),
-            typeArray = dictionary["type"] as? [String]
+            typeArray = dictionary["Type"] as? [AnyObject]
             else { fatalError("Could not initialize Pose") }
         
         self.init(entity: entity, insertIntoManagedObjectContext: context)
-        
         self.name = name
-        self.sanskritName = dictionary["sanskrit_name"] as? String ?? nil
+        self.sanskritName = dictionary["Sanskrit Name"] as? String ?? nil
         self.flow = flow
         
-        let types = typeArray.flatMap { Type(name: $0) }
+        let types = typeArray.flatMap { Type(name: $0 as! String) }
         self.types = NSOrderedSet(array: types)
+//        self.types = []
     }
 }
 

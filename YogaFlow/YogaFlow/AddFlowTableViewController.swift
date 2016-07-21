@@ -18,12 +18,14 @@ class AddFlowTableViewController: UITableViewController {
         if let flow = flow {
             updateWithFlow(flow)
         }
+        
+        
     }
     
     // MARK: - Buttons
     
     @IBAction func saveBtnPressed(sender: AnyObject) {
-        
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     // MARK: - Functions

@@ -24,7 +24,7 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
     // MARK: - Buttons
     
     @IBAction func doneButtonPressed(sender: AnyObject) {
-        
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     // MARK: - Functions
@@ -33,6 +33,9 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
         guard let searchTerm = searchBar.text else {return}
         
         PoseController.searchPoses(poses, searchTerm: searchTerm)
+        tableView.reloadData()
+        
+        searchBar.resignFirstResponder()
     }
     
     // MARK: - Table view data source

@@ -19,6 +19,8 @@ class PoseDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Pose Detail"
 
         if let pose = pose {
             updateWithPose(pose)
@@ -33,7 +35,7 @@ class PoseDetailViewController: UIViewController {
     func updateWithPose(pose: Pose) {
         poseNameLabel.text = pose.name
         sanskritNameLabel.text = pose.sanskritName
-        poseTypeLabel.text = "Type: \(pose.types.array.flatMap({$0.name}))"
+        poseTypeLabel.text = "Type: \(pose.types.array.flatMap({$0.name}).joinWithSeparator(", ") ?? "")"
     }
 
 }
