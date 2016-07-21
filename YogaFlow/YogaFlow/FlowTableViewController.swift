@@ -92,6 +92,10 @@ class FlowTableViewController: UITableViewController {
                 addFlowTVC?.flow = flow
             }
         }
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
     }
     
     

@@ -30,6 +30,8 @@
 		40544EA91D36FC5F003A1BB7 /* AddFlowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40544EA81D36FC5F003A1BB7 /* AddFlowTableViewController.swift */; };
 		40544ECF1D383DF7003A1BB7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40544ECD1D383DF6003A1BB7 /* Model.xcdatamodeld */; };
 		40544F0A1D395F93003A1BB7 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40544F091D395F93003A1BB7 /* Stack.swift */; };
+		40BEA3D11D4173CA006FE26C /* SAMARN__.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 40BEA3D01D4173CA006FE26C /* SAMARN__.TTF */; };
+		40BEA3D41D417AC2006FE26C /* Ananda Neptouch.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 40BEA3D31D417AC2006FE26C /* Ananda Neptouch.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		40544EA81D36FC5F003A1BB7 /* AddFlowTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFlowTableViewController.swift; sourceTree = "<group>"; };
 		40544ECE1D383DF7003A1BB7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		40544F091D395F93003A1BB7 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		40BEA3D01D4173CA006FE26C /* SAMARN__.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = SAMARN__.TTF; sourceTree = "<group>"; };
+		40BEA3D31D417AC2006FE26C /* Ananda Neptouch.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ananda Neptouch.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 			children = (
 				40544E8C1D36D522003A1BB7 /* YogaFlow */,
 				40544E8B1D36D522003A1BB7 /* Products */,
+				40BEA3D21D4173D2006FE26C /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +161,15 @@
 				404351201D399BCA003A7C33 /* Type.swift */,
 			);
 			name = "Model Objects";
+			sourceTree = "<group>";
+		};
+		40BEA3D21D4173D2006FE26C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				40BEA3D01D4173CA006FE26C /* SAMARN__.TTF */,
+				40BEA3D31D417AC2006FE26C /* Ananda Neptouch.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +230,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40BEA3D41D417AC2006FE26C /* Ananda Neptouch.ttf in Resources */,
+				40BEA3D11D4173CA006FE26C /* SAMARN__.TTF in Resources */,
 				40544E981D36D522003A1BB7 /* LaunchScreen.storyboard in Resources */,
 				40544E951D36D522003A1BB7 /* Assets.xcassets in Resources */,
 				40544E931D36D522003A1BB7 /* Main.storyboard in Resources */,

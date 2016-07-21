@@ -11,16 +11,24 @@ import UIKit
 class FlowListTableViewController: UITableViewController {
     
     var flows: [Flow] = []
+    var flowListTVC: FlowListTableViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        for family: String in UIFont.familyNames() {
+//            print("\(family)")
+//            for names: String in UIFont.fontNamesForFamilyName(family) {
+//                print("== \(names)")
+//            }
+//       }
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
-//        navigationItem.title = "Yoga Flow"
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navigationItem.title = "namaste"
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "AnandaNeptouch", size: 25)!]
         navigationController?.navigationBar.setBackgroundImage(UIImage(named: "yfheader"), forBarMetrics: .Default)
         
         flows = FlowController.sharedController.mockFlows
@@ -51,7 +59,7 @@ class FlowListTableViewController: UITableViewController {
      }
      */
     
-    
+    /*
      // Override to support editing the table view.
      override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
@@ -62,7 +70,7 @@ class FlowListTableViewController: UITableViewController {
      
         }
      }
-    
+    */
     
     /*
      // Override to support rearranging the table view.
@@ -80,6 +88,9 @@ class FlowListTableViewController: UITableViewController {
             let flowTVC = segue.destinationViewController as? FlowTableViewController
             flowTVC?.flow = flow
         }
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
     }
 
 }

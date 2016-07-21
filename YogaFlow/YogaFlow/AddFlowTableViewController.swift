@@ -25,9 +25,6 @@ class AddFlowTableViewController: UITableViewController {
     
     // MARK: - Functions
 
-    override func scrollViewDidScroll(scrollView: UIScrollView) {
-        self.userInputTVC?.textfieldResignFirstResponder()
-    }
 
     // MARK: - Table view data source
 

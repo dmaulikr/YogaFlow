@@ -34,8 +34,6 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
         
         PoseController.searchPoses(poses, searchTerm: searchTerm)
         tableView.reloadData()
-        
-        searchBar.resignFirstResponder()
     }
     
     // MARK: - Table view data source
