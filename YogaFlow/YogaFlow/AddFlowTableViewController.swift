@@ -68,10 +68,22 @@ class AddFlowTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         switch indexPath.section {
-        case 0, 1:
-            let cell = tableView.dequeueReusableCellWithIdentifier("inputCell", forIndexPath: indexPath)
+        case 0:
+            let cell = tableView.dequeueReusableCellWithIdentifier("inputCell", forIndexPath: indexPath) as? UserInputTableViewCell
             
-            return cell
+            if let flow = flow {
+                cell?.updateWithFlowName(flow)
+            }
+            
+            return cell ?? UserInputTableViewCell()
+        case 1:
+            let cell = tableView.dequeueReusableCellWithIdentifier("inputCell", forIndexPath: indexPath) as? UserInputTableViewCell
+            
+            if let flow = flow {
+                cell?.updateWithFlowNotes(flow)
+            }
+            
+            return cell ?? UserInputTableViewCell()
         default:
             let cell = tableView.dequeueReusableCellWithIdentifier("poseCell", forIndexPath: indexPath)
             

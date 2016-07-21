@@ -10,6 +10,10 @@ import UIKit
 
 class UserInputTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var userInputTextField: UITextField!
+    
+    var flow: Flow?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +23,14 @@ class UserInputTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func updateWithFlowName(flow: Flow) {
+        userInputTextField.text = flow.name
+    }
+    
+    func updateWithFlowNotes(flow: Flow) {
+        userInputTextField.text = flow.notes
     }
 
 }

@@ -19,8 +19,9 @@ class FlowListTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
-        navigationItem.title = "Yoga Flow"
+//        navigationItem.title = "Yoga Flow"
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navigationController?.navigationBar.setBackgroundImage(UIImage(named: "yfheader"), forBarMetrics: .Default)
         
         flows = FlowController.sharedController.mockFlows
     }

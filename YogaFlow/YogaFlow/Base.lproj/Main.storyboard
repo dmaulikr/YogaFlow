@@ -221,7 +221,7 @@
                         <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jEb-UU-iK2">
                             <rect key="frame" x="0.0" y="180" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Add Pose(s)"/>
+                            <state key="normal" title="Add/Edit Poses"/>
                             <connections>
                                 <segue destination="2sv-gH-gxe" kind="show" id="ySM-k0-NMy"/>
                             </connections>
@@ -247,6 +247,9 @@
                                         <constraint firstItem="wna-tq-B6p" firstAttribute="top" secondItem="vqO-7u-QhD" secondAttribute="topMargin" constant="-1" id="rA6-41-psg"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="userInputTextField" destination="wna-tq-B6p" id="eq7-sI-7eN"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="poseCell" textLabel="tmh-R1-VDI" detailTextLabel="hND-0H-JNO" style="IBUITableViewCellStyleSubtitle" id="VpT-om-va4">
                                 <rect key="frame" x="0.0" y="136" width="600" height="44"/>

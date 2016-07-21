@@ -36,16 +36,5 @@ class Pose: NSManagedObject {
         
         let types = typeArray.flatMap { Type(name: $0 as! String) }
         self.types = NSOrderedSet(array: types)
-//        self.types = []
     }
 }
-
-/* 
- "big_toe_pose": {
-    "sanskrit_name": "Padangusthasana",
-    "type": [
-        "forward bend",
-        "standing"
-    ]
- }
- */
