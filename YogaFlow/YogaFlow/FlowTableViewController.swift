@@ -22,10 +22,6 @@ class FlowTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        if let flow = flow {
-            print(flow.poses.count)
-        }
     }
     
     // MARK: - Table view data source

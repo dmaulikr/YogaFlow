@@ -18,8 +18,6 @@ class AddFlowTableViewController: UITableViewController {
         if let flow = flow {
             updateWithFlow(flow)
         }
-        
-        
     }
     
     // MARK: - Buttons
@@ -33,7 +31,6 @@ class AddFlowTableViewController: UITableViewController {
     func updateWithFlow(flow: Flow) {
         
     }
-
 
     // MARK: - Table view data source
 
@@ -61,7 +58,11 @@ class AddFlowTableViewController: UITableViewController {
         } else if section == 1 {
             return 1
         } else {
-            return 0
+            if let flow = flow {
+                return flow.poses.count
+            } else {
+                return 0
+            }
         }
     }
     
@@ -73,6 +74,12 @@ class AddFlowTableViewController: UITableViewController {
             return cell
         default:
             let cell = tableView.dequeueReusableCellWithIdentifier("poseCell", forIndexPath: indexPath)
+            
+            if let flow = flow {
+                guard let pose = flow.poses[indexPath.row] as? Pose else {return UITableViewCell()}
+                cell.textLabel?.text = pose.name
+                cell.detailTextLabel?.text = pose.sanskritName
+            }
             
             return cell
         }

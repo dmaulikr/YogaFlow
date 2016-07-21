@@ -34,7 +34,7 @@ class PoseController {
             for (key, value) in jsonDictionary {
                 let pose = Pose(name: key, dictionary: value as! [String: AnyObject])
                 poses.append(pose)
-                print(poses.count)
+//                print(poses.count)
             }
             let sortedPoses = poses.sort({$0.0.name < $0.1.name})
             completion(poses: sortedPoses)
