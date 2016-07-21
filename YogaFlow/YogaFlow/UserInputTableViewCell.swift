@@ -32,5 +32,9 @@ class UserInputTableViewCell: UITableViewCell {
     func updateWithFlowNotes(flow: Flow) {
         userInputTextField.text = flow.notes
     }
+    
+    func textfieldResignFirstResponder() {
+        userInputTextField.resignFirstResponder()
+    }
 
 }

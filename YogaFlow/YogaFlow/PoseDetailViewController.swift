@@ -36,6 +36,7 @@ class PoseDetailViewController: UIViewController {
         poseNameLabel.text = pose.name
         sanskritNameLabel.text = pose.sanskritName
         poseTypeLabel.text = "Type: \(pose.types.array.flatMap({$0.name}).joinWithSeparator(", ") ?? "")"
+        poseImageView.image = pose.image
     }
 
 }

@@ -16,6 +16,7 @@ class SearchResultTableViewCell: UITableViewCell {
     @IBOutlet weak var sanskritNameLabel: UILabel!
     
     @IBAction func addButtonPressed(sender: AnyObject) {
+        
         print("Add button pressed")
     }
     

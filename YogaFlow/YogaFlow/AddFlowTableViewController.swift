@@ -11,13 +11,10 @@ import UIKit
 class AddFlowTableViewController: UITableViewController {
     
     var flow: Flow?
+    var userInputTVC: UserInputTableViewCell?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let flow = flow {
-            updateWithFlow(flow)
-        }
     }
     
     // MARK: - Buttons
@@ -27,9 +24,9 @@ class AddFlowTableViewController: UITableViewController {
     }
     
     // MARK: - Functions
-    
-    func updateWithFlow(flow: Flow) {
-        
+
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        self.userInputTVC?.textfieldResignFirstResponder()
     }
 
     // MARK: - Table view data source

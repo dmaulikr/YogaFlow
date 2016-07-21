@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "cow_face_pose.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "bharadvajas_twist.jpg",
       "scale" : "2x"
     },
     {

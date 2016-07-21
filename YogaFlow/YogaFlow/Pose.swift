@@ -6,7 +6,7 @@
 //  Copyright © 2016 Emily Mearns. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 
@@ -34,7 +34,11 @@ class Pose: NSManagedObject {
         self.sanskritName = dictionary["Sanskrit Name"] as? String ?? nil
         self.flow = flow
         
-        let types = typeArray.flatMap { Type(name: $0 as! String) }
+        let types = typeArray.flatMap { Type(name: $0 as? String ?? "") }
         self.types = NSOrderedSet(array: types)
+    }
+    
+    var image: UIImage {
+        return UIImage(named: name) ?? UIImage()
     }
 }
