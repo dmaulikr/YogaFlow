@@ -34,19 +34,18 @@ class PoseController {
     }
     
     static func searchPoses(poses: [Pose], searchTerm: String) -> [Pose] {
-        var sortedPoses: [Pose] = []
+        return poses.filter { $0.name.containsString(searchTerm) }
         
-        fetchPoses { (poses) in
-            for pose in poses {
-                if pose.name.containsString(searchTerm) {
-                    sortedPoses.append(pose)
-                }
-                if checkIfPoseTypesContainsTerm(pose, term: searchTerm) == true {
-                    sortedPoses.append(pose)
-                }
-            }
-        }
-        return sortedPoses
+//        fetchPoses { (poses) in
+//            for pose in poses {
+//                if pose.name.containsString(searchTerm) {
+//                    sortedPoses.append(pose)
+//                }
+////                if checkIfPoseTypesContainsTerm(pose, term: searchTerm) == true {
+////                    sortedPoses.append(pose)
+////                }
+//            }
+//        }
     }
     
     static func checkIfPoseTypesContainsTerm(pose: Pose, term: String) -> Bool {

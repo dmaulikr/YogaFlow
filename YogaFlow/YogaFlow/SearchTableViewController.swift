@@ -11,12 +11,14 @@ import UIKit
 class SearchTableViewController: UITableViewController, UISearchBarDelegate {
     
     var poses = [Pose]()
+    var backup = [Pose]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         PoseController.fetchPoses { (poses) in
             self.poses = poses
+            self.backup = poses
             self.tableView.reloadData()
         }
     }
@@ -32,7 +34,17 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         guard let searchTerm = searchBar.text else {return}
         
-        PoseController.searchPoses(poses, searchTerm: searchTerm)
+        poses = PoseController.searchPoses(poses, searchTerm: searchTerm)
+        tableView.reloadData()
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        guard let searchTerm = searchBar.text else {return}
+        
+        poses = PoseController.searchPoses(poses, searchTerm: searchTerm)
+        if poses.count == 0 {
+            poses = backup
+        }
         tableView.reloadData()
     }
     

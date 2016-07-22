@@ -20,12 +20,13 @@ class FlowController {
     }
     
     var mockFlows: [Flow] {
-        let pose1 = Pose(name: "Big Toe Pose", dictionary: ["Sanskrit Name": "Padangusthasana", "Type": ["Core", "Seated"]])
-        let pose2 = Pose(name: "Upward Plank Pose", dictionary: ["Sanskrit Name": "Purvottanasana", "Type": ["Strengthening"]])
-        let pose3 = Pose(name: "Scale Pose", dictionary: ["Sanskrit Name": "Tolasana", "Type": ["Arm Balance", "Core"]])
-        let pose4 = Pose(name: "Pigeon Pose", dictionary: ["Sanskrit Name": "Kapotasana", "Type": ["Backbend"]])
-        let flow1 = Flow(name: "Sunrise", notes: "First thing in the AM", poses: [pose1, pose2])
-        let flow2 = Flow(name: "Sunset", notes: "Last thing in the PM", poses: [pose3, pose4])
+        let cow = Pose(name: "Cow Pose", dictionary: ["Sanskrit Name": "Bitilasana", "Type": ["Chest Opening", "Backbend"]])
+        let cat = Pose(name: "Cat Pose", dictionary: ["Sanskrit Name": "Marjaryasana", "Type": ["Core"]])
+        let dog = Pose(name: "Downward-Facing Dog", dictionary: ["Sanskrit Name":"Adho Mukha Svanasana", "Type":["Forward Bend", "Standing", "Strengthening"]])
+        let scale = Pose(name: "Scale Pose", dictionary: ["Sanskrit Name": "Tolasana", "Type": ["Arm Balance", "Core"]])
+        let pigeon = Pose(name: "Pigeon Pose", dictionary: ["Sanskrit Name": "Kapotasana", "Type": ["Backbend"]])
+        let flow1 = Flow(name: "Sunrise", notes: "First thing in the AM", poses: [cow, cat, dog])
+        let flow2 = Flow(name: "Sunset", notes: "Last thing in the PM", poses: [scale, pigeon])
         return [flow1, flow2]
     }
     
