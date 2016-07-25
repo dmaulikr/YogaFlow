@@ -11,10 +11,16 @@ import UIKit
 class AddFlowTableViewController: UITableViewController {
     
     var flow: Flow?
-    var userInputTVC: UserInputTableViewCell?
+    var poses: [Pose] = []
+//    var userInputTVC: UserInputTableViewCell?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
     // MARK: - Buttons
@@ -27,17 +33,20 @@ class AddFlowTableViewController: UITableViewController {
             case 1:
                 let notes = textfield.textLabel?.text
             default:
-                <#code#>
+                code
             }
         }
-        
+         */
         if let flow = flow {
-            FlowController.sharedController.updateFlow(<#T##flow: Flow##Flow#>, name: <#T##String#>, notes: <#T##String?#>, poses: <#T##[Pose]#>)
+            FlowController.sharedController.updateFlow(flow, name: flow.name, notes: flow.notes, poses: poses)
         } else {
-            FlowController.sharedController.createFlow(<#T##name: String##String#>, notes: <#T##String?#>, poses: <#T##[Pose]#>)
+            
         }
-        self.navigationController?.popViewControllerAnimated(true)*/
+ 
+        self.navigationController?.popViewControllerAnimated(true)
     }
+    
+    @IBAction func unwindToAddFlowTVC(segue: UIStoryboardSegue) {}
     
     // MARK: - Functions
     
@@ -71,7 +80,7 @@ class AddFlowTableViewController: UITableViewController {
             if let flow = flow {
                 return flow.poses.count
             } else {
-                return 0
+                return poses.count
             }
         }
     }
@@ -96,12 +105,25 @@ class AddFlowTableViewController: UITableViewController {
                 guard let pose = flow.poses[indexPath.row] as? Pose else {return UITableViewCell()}
                 cell.textLabel?.text = pose.name
                 cell.detailTextLabel?.text = pose.sanskritName
+            } else {
+                let pose = poses[indexPath.row]
+                cell.textLabel?.text = pose.name
+                cell.detailTextLabel?.text = pose.sanskritName
             }
             return cell
         }
     }
     
+    // MARK: - Navigation
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toSearchViaAddFlowTVC" {
+            if let flow = flow,
+                let searchTVC = segue.destinationViewController as? SearchTableViewController {
+                searchTVC.addedPoses = flow.poses.array as? [Pose] ?? []
+            }
+        }
+        
         let backItem = UIBarButtonItem()
         backItem.title = "Cancel"
         navigationItem.backBarButtonItem = backItem

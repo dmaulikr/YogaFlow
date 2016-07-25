@@ -34,7 +34,9 @@ class PoseController {
     }
     
     static func searchPoses(poses: [Pose], searchTerm: String) -> [Pose] {
-        return poses.filter { $0.name.containsString(searchTerm) }
+        let sortedPoses = poses.filter { $0.name.containsString(searchTerm) }
+        
+        return sortedPoses
         
 //        fetchPoses { (poses) in
 //            for pose in poses {

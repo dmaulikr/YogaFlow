@@ -29,18 +29,15 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, Sea
     // MARK: - Actions
     
     @IBAction func doneButtonPressed(sender: AnyObject) {
-        
-        self.navigationController?.popViewControllerAnimated(true)
+        self.performSegueWithIdentifier("unwindToAddFlowTVC", sender: self)
     }
     
     @IBAction func segController(sender: AnyObject) {
         if segControlOutlet.selectedSegmentIndex == 0 {
             tableView.reloadData()
-            print("Search Controller")
         }
         if segControlOutlet.selectedSegmentIndex == 1 {
             tableView.reloadData()
-            print("Added Controller")
         }
     }
     
@@ -109,6 +106,22 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, Sea
             let poseCell = sender as? SearchResultTableViewCell,
             let indexPath = tableView.indexPathForCell(poseCell) {
             poseDetailVC.pose = poses[indexPath.row]
+        }
+        
+        if segue.identifier == "unwindToAddFlowTVC", let addFlowTVC = segue.destinationViewController as? AddFlowTableViewController {
+            if addFlowTVC.flow != nil {
+                
+                // This is when you set addedPoses to equal the flows current poses // This will make sure you don't have duplicates // or else OIF
+//                addFlowTVC.flow?.poses = NSOrderedSet(array: addedPoses)
+                
+                // TODO: Make sure you delete this code when you uncomment ^^^^ or else // OIF
+                if var flowPoses = addFlowTVC.flow?.poses.array as? [Pose] {
+                    flowPoses.appendContentsOf(addedPoses)
+                    addFlowTVC.flow?.poses = NSOrderedSet(array: flowPoses)
+                }
+            } else {
+                addFlowTVC.poses = addedPoses
+            }
         }
     }
     

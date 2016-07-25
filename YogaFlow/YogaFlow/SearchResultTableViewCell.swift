@@ -14,14 +14,13 @@ class SearchResultTableViewCell: UITableViewCell {
     
     @IBOutlet weak var poseNameLabel: UILabel!
     @IBOutlet weak var sanskritNameLabel: UILabel!
+    @IBOutlet weak var addButtonText: UIButton!
     
     weak var delegate: SearchResultDelegate?
     
     @IBAction func addButtonPressed(sender: AnyObject) {
-//        if let name = poseNameLabel.text {
-//            let pose = Pose(name: name, dictionary: [:])
-//            poses.append(pose)
-//        }
+        addButtonText.titleLabel?.text = "✔"
+        addButtonText.tintColor = .greenColor()
         delegate?.poseSelected(self)
         print("Add button pressed")
     }
