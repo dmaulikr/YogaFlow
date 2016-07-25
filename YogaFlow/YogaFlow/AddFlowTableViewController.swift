@@ -20,12 +20,12 @@ class AddFlowTableViewController: UITableViewController {
     // MARK: - Buttons
     
     @IBAction func saveBtnPressed(sender: AnyObject) {
-        if let textfield = userInputTVC {
-            switch index {
+       /* if let textfield = userInputTVC {
+            switch tableView.section {
             case 0:
-                userInputTVC?.textLabel?.text = flow?.name
+                let name = textfield.textLabel?.text
             case 1:
-                userInputTVC?.textLabel?.text = flow?.notes
+                let notes = textfield.textLabel?.text
             default:
                 <#code#>
             }
@@ -36,7 +36,7 @@ class AddFlowTableViewController: UITableViewController {
         } else {
             FlowController.sharedController.createFlow(<#T##name: String##String#>, notes: <#T##String?#>, poses: <#T##[Pose]#>)
         }
-        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.popViewControllerAnimated(true)*/
     }
     
     // MARK: - Functions
@@ -99,6 +99,12 @@ class AddFlowTableViewController: UITableViewController {
             }
             return cell
         }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let backItem = UIBarButtonItem()
+        backItem.title = "Cancel"
+        navigationItem.backBarButtonItem = backItem
     }
     
     

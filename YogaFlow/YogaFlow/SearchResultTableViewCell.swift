@@ -15,11 +15,14 @@ class SearchResultTableViewCell: UITableViewCell {
     @IBOutlet weak var poseNameLabel: UILabel!
     @IBOutlet weak var sanskritNameLabel: UILabel!
     
+    weak var delegate: SearchResultDelegate?
+    
     @IBAction func addButtonPressed(sender: AnyObject) {
-        if let name = poseNameLabel.text {
-            let pose = Pose(name: name, dictionary: [:])
-            poses.append(pose)
-        }
+//        if let name = poseNameLabel.text {
+//            let pose = Pose(name: name, dictionary: [:])
+//            poses.append(pose)
+//        }
+        delegate?.poseSelected(self)
         print("Add button pressed")
     }
     
@@ -37,5 +40,8 @@ class SearchResultTableViewCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
-    
+}
+
+protocol SearchResultDelegate: class {
+    func poseSelected(cell: SearchResultTableViewCell)
 }

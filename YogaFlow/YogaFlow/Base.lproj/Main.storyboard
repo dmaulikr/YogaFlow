@@ -370,6 +370,9 @@
                                 <segment title="Search"/>
                                 <segment title="Added"/>
                             </segments>
+                            <connections>
+                                <action selector="segController:" destination="2sv-gH-gxe" eventType="valueChanged" id="vJt-ib-cfK"/>
+                            </connections>
                         </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="6fg-0d-JoJ">
                             <connections>
@@ -377,6 +380,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="segControlOutlet" destination="cHC-0n-B5R" id="tzA-v2-Ugl"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C6s-7E-yOi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -402,7 +408,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="KeA-Wh-z2n"/>
+        <segue reference="8yq-Zd-eyw"/>
         <segue reference="Kzu-no-lIW"/>
     </inferredMetricsTieBreakers>
 </document>

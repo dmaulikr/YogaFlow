@@ -8,9 +8,12 @@
 
 import UIKit
 
-class SearchTableViewController: UITableViewController, UISearchBarDelegate {
+class SearchTableViewController: UITableViewController, UISearchBarDelegate, SearchResultDelegate {
+    
+    @IBOutlet weak var segControlOutlet: UISegmentedControl!
     
     var poses = [Pose]()
+    var addedPoses = [Pose]()
     var backup = [Pose]()
     
     override func viewDidLoad() {
@@ -23,10 +26,22 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
         }
     }
     
-    // MARK: - Buttons
+    // MARK: - Actions
     
     @IBAction func doneButtonPressed(sender: AnyObject) {
+        
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    @IBAction func segController(sender: AnyObject) {
+        if segControlOutlet.selectedSegmentIndex == 0 {
+            tableView.reloadData()
+            print("Search Controller")
+        }
+        if segControlOutlet.selectedSegmentIndex == 1 {
+            tableView.reloadData()
+            print("Added Controller")
+        }
     }
     
     // MARK: - Functions
@@ -48,18 +63,40 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
         tableView.reloadData()
     }
     
+    // MARK: - Search Result Delegate
+    
+    func poseSelected(cell: SearchResultTableViewCell) {
+        guard let indexPath = tableView.indexPathForCell(cell) else {
+            return
+        }
+        let pose = poses[indexPath.row]
+        addedPoses.append(pose)
+    }
+    
     // MARK: - Table view data source
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return poses.count
+        switch segControlOutlet.selectedSegmentIndex {
+        case 0:
+            return poses.count
+        default:
+            return addedPoses.count
+        }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("poseCell", forIndexPath: indexPath) as? SearchResultTableViewCell
         
-        let pose = poses[indexPath.row]
-        cell?.updateCellWithPose(pose)
-        
+        switch segControlOutlet.selectedSegmentIndex {
+        case 0:
+            let pose = poses[indexPath.row]
+            cell?.updateCellWithPose(pose)
+            cell?.delegate = self
+        default:
+            let pose = addedPoses[indexPath.row]
+            cell?.updateCellWithPose(pose)
+            cell?.delegate = self
+        }
         return cell ?? SearchResultTableViewCell()
     }
     
@@ -75,6 +112,6 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
         }
     }
     
-    
+
     
 }

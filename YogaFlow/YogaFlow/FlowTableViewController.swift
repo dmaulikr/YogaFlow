@@ -70,6 +70,7 @@ class FlowTableViewController: UITableViewController {
             if let flow = flow {
                 cell.textLabel?.text = flow.timestamp.stringValue()
             }
+            
             return cell
         }
     }
