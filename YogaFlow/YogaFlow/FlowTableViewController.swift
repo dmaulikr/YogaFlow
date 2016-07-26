@@ -94,7 +94,7 @@ class FlowTableViewController: UITableViewController {
         }
         
         let backItem = UIBarButtonItem()
-        backItem.title = ""
+        backItem.title = "Cancel"
         navigationItem.backBarButtonItem = backItem
     }
     

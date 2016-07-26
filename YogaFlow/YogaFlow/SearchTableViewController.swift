@@ -105,20 +105,26 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, Sea
             let poseDetailVC = segue.destinationViewController as? PoseDetailViewController,
             let poseCell = sender as? SearchResultTableViewCell,
             let indexPath = tableView.indexPathForCell(poseCell) {
-            poseDetailVC.pose = poses[indexPath.row]
+            switch segControlOutlet.selectedSegmentIndex {
+            case 0:
+                poseDetailVC.pose = poses[indexPath.row]
+            default:
+                poseDetailVC.pose = addedPoses[indexPath.row]
+            }
+            
         }
         
         if segue.identifier == "unwindToAddFlowTVC", let addFlowTVC = segue.destinationViewController as? AddFlowTableViewController {
             if addFlowTVC.flow != nil {
                 
                 // This is when you set addedPoses to equal the flows current poses // This will make sure you don't have duplicates // or else OIF
-//                addFlowTVC.flow?.poses = NSOrderedSet(array: addedPoses)
+                addFlowTVC.flow?.poses = NSOrderedSet(array: addedPoses)
                 
                 // TODO: Make sure you delete this code when you uncomment ^^^^ or else // OIF
-                if var flowPoses = addFlowTVC.flow?.poses.array as? [Pose] {
-                    flowPoses.appendContentsOf(addedPoses)
-                    addFlowTVC.flow?.poses = NSOrderedSet(array: flowPoses)
-                }
+//                if var flowPoses = addFlowTVC.flow?.poses.array as? [Pose] {
+//                    flowPoses.appendContentsOf(addedPoses)
+//                    addFlowTVC.flow?.poses = NSOrderedSet(array: flowPoses)
+//                }
             } else {
                 addFlowTVC.poses = addedPoses
             }

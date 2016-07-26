@@ -10,89 +10,63 @@ import UIKit
 
 class FlowListTableViewController: UITableViewController {
     
-    var flows: [Flow] = []
+//    var flows: [Flow] = []
     var flowListTVC: FlowListTableViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        for family: String in UIFont.familyNames() {
-//            print("\(family)")
-//            for names: String in UIFont.fontNamesForFamilyName(family) {
-//                print("== \(names)")
-//            }
-//       }
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         
         navigationItem.title = "namaste"
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "AnandaNeptouch", size: 25)!]
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "AnandaNeptouch", size: 22)!]
         navigationController?.navigationBar.setBackgroundImage(UIImage(named: "yfheader"), forBarMetrics: .Default)
         
-        flows = FlowController.sharedController.mockFlows
+        
+        tableView.reloadData()
     }
     
     // MARK: - Table view data source
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return flows.count
+        return FlowController.sharedController.flows.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("flowCell", forIndexPath: indexPath)
         
-        let flow = flows[indexPath.row]
+        let flow = FlowController.sharedController.flows[indexPath.row]
         cell.textLabel?.text = flow.name
         cell.detailTextLabel?.text = flow.timestamp.stringValue()
         
         return cell
     }
     
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            let flow = flows[indexPath.row]
+            let flow = FlowController.sharedController.flows[indexPath.row]
             FlowController.sharedController.deleteFlow(flow)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-     
+            
         }
-     }
-    */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-     
-     }
-     */
-    
+    }
     
     // MARK: - Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toFlowDetail", let indexPath = tableView.indexPathForSelectedRow {
-            let flow = flows[indexPath.row]
+            let flow = FlowController.sharedController.flows[indexPath.row]
             let flowTVC = segue.destinationViewController as? FlowTableViewController
             flowTVC?.flow = flow
         }
+        
         let backItem = UIBarButtonItem()
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
     }
-
+    
 }
 
 

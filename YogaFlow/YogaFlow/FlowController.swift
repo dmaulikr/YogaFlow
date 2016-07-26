@@ -15,6 +15,8 @@ class FlowController {
     
     var flows: [Flow] {
         let request = NSFetchRequest(entityName: "Flow")
+        let timestampSortDescriptor = NSSortDescriptor(key: "timestamp", ascending: false)
+        request.sortDescriptors = [timestampSortDescriptor]
         let moc = Stack.sharedStack.managedObjectContext
         return (try? moc.executeFetchRequest(request)) as? [Flow] ?? []
     }

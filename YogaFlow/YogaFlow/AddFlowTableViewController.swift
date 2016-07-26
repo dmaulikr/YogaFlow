@@ -12,7 +12,8 @@ class AddFlowTableViewController: UITableViewController {
     
     var flow: Flow?
     var poses: [Pose] = []
-//    var userInputTVC: UserInputTableViewCell?
+    var nameTableViewCell: UserInputTableViewCell?
+    var notesTableViewCell: UserInputTableViewCell?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,28 +22,20 @@ class AddFlowTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+        
+        
     }
     
     // MARK: - Buttons
     
     @IBAction func saveBtnPressed(sender: AnyObject) {
-       /* if let textfield = userInputTVC {
-            switch tableView.section {
-            case 0:
-                let name = textfield.textLabel?.text
-            case 1:
-                let notes = textfield.textLabel?.text
-            default:
-                code
-            }
-        }
-         */
-        if let flow = flow {
-            FlowController.sharedController.updateFlow(flow, name: flow.name, notes: flow.notes, poses: poses)
+        guard let nameCell = nameTableViewCell, notesCell = notesTableViewCell, name = nameCell.userInputTextField.text, notes = notesCell.userInputTextField.text else {return}
+
+        if let flow = flow, poses = flow.poses.array as? [Pose] {
+            FlowController.sharedController.updateFlow(flow, name: name, notes: notes, poses: poses)
         } else {
-            
+            FlowController.sharedController.createFlow(name, notes: notes, poses: poses)
         }
- 
         self.navigationController?.popViewControllerAnimated(true)
     }
     
@@ -92,12 +85,14 @@ class AddFlowTableViewController: UITableViewController {
             if let flow = flow {
                 cell?.updateWithFlowName(flow)
             }
+            nameTableViewCell = cell
             return cell ?? UserInputTableViewCell()
         case 1:
             let cell = tableView.dequeueReusableCellWithIdentifier("inputCell", forIndexPath: indexPath) as? UserInputTableViewCell
             if let flow = flow {
                 cell?.updateWithFlowNotes(flow)
             }
+            notesTableViewCell = cell
             return cell ?? UserInputTableViewCell()
         default:
             let cell = tableView.dequeueReusableCellWithIdentifier("poseCell", forIndexPath: indexPath)
@@ -125,7 +120,7 @@ class AddFlowTableViewController: UITableViewController {
         }
         
         let backItem = UIBarButtonItem()
-        backItem.title = "Cancel"
+        backItem.title = ""
         navigationItem.backBarButtonItem = backItem
     }
     
