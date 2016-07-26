@@ -386,6 +386,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="5Pa-ra-K6Y" id="5EN-uf-AR7"/>
                         <outlet property="segControlOutlet" destination="cHC-0n-B5R" id="tzA-v2-Ugl"/>
                         <segue destination="B6f-Eh-FXW" kind="unwind" identifier="unwindToAddFlowTVC" unwindAction="unwindToAddFlowTVC:" id="LOo-IP-QHo"/>
                     </connections>

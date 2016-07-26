@@ -23,7 +23,7 @@ class SearchResultTableViewCell: UITableViewCell {
     @IBAction func addButtonPressed(sender: AnyObject) {
         addButtonImage.setImage(plusImage, forState: .Normal)
         addButtonImage.imageView?.animationImages = [checkImage!, plusImage!]
-        addButtonImage.imageView?.animationDuration = 1.0
+        addButtonImage.imageView?.animationDuration = 1.5
         addButtonImage.imageView?.animationRepeatCount = 1
         addButtonImage.imageView?.startAnimating()
         

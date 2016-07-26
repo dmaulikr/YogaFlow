@@ -11,6 +11,7 @@ import UIKit
 class SearchTableViewController: UITableViewController, UISearchBarDelegate, SearchResultDelegate {
     
     @IBOutlet weak var segControlOutlet: UISegmentedControl!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var poses = [Pose]()
     var addedPoses = [Pose]()
@@ -118,7 +119,8 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, Sea
         if editingStyle == .Delete {
             if segControlOutlet.selectedSegmentIndex == 1 {
                 let pose = addedPoses[indexPath.row]
-                
+                guard let index = addedPoses.indexOf(pose) else {return}
+                addedPoses.removeAtIndex(index)
             }
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
@@ -127,15 +129,21 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, Sea
     }
     
     
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-     
-     }
-     */
+    
+    // Override to support rearranging the table view.
+    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+        let pose = addedPoses[fromIndexPath.row]
+        addedPoses.removeAtIndex(fromIndexPath.row)
+        addedPoses.insert(pose, atIndex: toIndexPath.row)
+    }
+    
     
     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
+        if segControlOutlet.selectedSegmentIndex == 1 {
+            return true
+        } else {
+            return false
+        }
     }
     
     
