@@ -89,12 +89,53 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, Sea
             let pose = poses[indexPath.row]
             cell?.updateCellWithPose(pose)
             cell?.delegate = self
-        default:
+            cell?.addButtonImage.setImage(UIImage(named: "button-plus"), forState: .Normal)
+            cell?.addButtonImage.enabled = true
+        case 1:
             let pose = addedPoses[indexPath.row]
             cell?.updateCellWithPose(pose)
             cell?.delegate = self
+            cell?.addButtonImage.setImage(UIImage(named: "button-arrange"), forState: .Normal)
+            cell?.addButtonImage.enabled = false
+            
+        default:
+            break
         }
         return cell ?? SearchResultTableViewCell()
+    }
+    
+    /*
+     // Override to support conditional editing of the table view.
+     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+     // Return false if you do not want the specified item to be editable.
+     return true
+     }
+     */
+    
+    
+    // Override to support editing the table view.
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            if segControlOutlet.selectedSegmentIndex == 1 {
+                let pose = addedPoses[indexPath.row]
+                
+            }
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        } else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
+    
+    
+    /*
+     // Override to support rearranging the table view.
+     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+     
+     }
+     */
+    
+    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
     }
     
     
@@ -121,16 +162,16 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, Sea
                 addFlowTVC.flow?.poses = NSOrderedSet(array: addedPoses)
                 
                 // TODO: Make sure you delete this code when you uncomment ^^^^ or else // OIF
-//                if var flowPoses = addFlowTVC.flow?.poses.array as? [Pose] {
-//                    flowPoses.appendContentsOf(addedPoses)
-//                    addFlowTVC.flow?.poses = NSOrderedSet(array: flowPoses)
-//                }
+                //                if var flowPoses = addFlowTVC.flow?.poses.array as? [Pose] {
+                //                    flowPoses.appendContentsOf(addedPoses)
+                //                    addFlowTVC.flow?.poses = NSOrderedSet(array: flowPoses)
+                //                }
             } else {
                 addFlowTVC.poses = addedPoses
             }
         }
     }
     
-
+    
     
 }

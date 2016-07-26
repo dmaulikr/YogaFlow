@@ -318,15 +318,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="53"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQH-0Y-svc">
-                                            <rect key="frame" x="562" y="12" width="30" height="30"/>
-                                            <state key="normal" title="+">
-                                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="addButtonPressed:" destination="QKB-ce-GKH" eventType="touchUpInside" id="X6T-5E-9M5"/>
-                                            </connections>
-                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHk-xF-FEH">
                                             <rect key="frame" x="8" y="8" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -339,6 +330,19 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQH-0Y-svc">
+                                            <rect key="frame" x="558" y="10" width="34" height="34"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="34" id="FzE-gG-L6p"/>
+                                                <constraint firstAttribute="width" constant="34" id="KDy-cq-Bmj"/>
+                                            </constraints>
+                                            <state key="normal" image="button-plus">
+                                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="addButtonPressed:" destination="QKB-ce-GKH" eventType="touchUpInside" id="X6T-5E-9M5"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="leadingMargin" secondItem="hNi-Z1-TkJ" secondAttribute="leading" id="5Cg-gN-wDe"/>
@@ -350,7 +354,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="addButtonText" destination="eQH-0Y-svc" id="7af-21-bRf"/>
+                                    <outlet property="addButtonImage" destination="eQH-0Y-svc" id="G49-nV-l1l"/>
                                     <outlet property="poseNameLabel" destination="rHk-xF-FEH" id="WOp-FG-cva"/>
                                     <outlet property="sanskritNameLabel" destination="hNi-Z1-TkJ" id="muU-hC-Qta"/>
                                     <segue destination="rMk-FL-X8Z" kind="show" identifier="toPoseDetailViaSearch" id="8yq-Zd-eyw"/>
@@ -410,6 +414,9 @@
             <point key="canvasLocation" x="559" y="460"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="button-plus" width="80" height="80"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="8yq-Zd-eyw"/>
         <segue reference="Kzu-no-lIW"/>

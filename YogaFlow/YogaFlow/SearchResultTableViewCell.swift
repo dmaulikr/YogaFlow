@@ -14,13 +14,19 @@ class SearchResultTableViewCell: UITableViewCell {
     
     @IBOutlet weak var poseNameLabel: UILabel!
     @IBOutlet weak var sanskritNameLabel: UILabel!
-    @IBOutlet weak var addButtonText: UIButton!
+    @IBOutlet weak var addButtonImage: UIButton!
     
     weak var delegate: SearchResultDelegate?
+    let plusImage = UIImage(named: "button-plus")
+    let checkImage = UIImage(named: "button-check")
     
     @IBAction func addButtonPressed(sender: AnyObject) {
-        addButtonText.titleLabel?.text = "✔"
-        addButtonText.tintColor = .greenColor()
+        addButtonImage.setImage(plusImage, forState: .Normal)
+        addButtonImage.imageView?.animationImages = [checkImage!, plusImage!]
+        addButtonImage.imageView?.animationDuration = 1.0
+        addButtonImage.imageView?.animationRepeatCount = 1
+        addButtonImage.imageView?.startAnimating()
+        
         delegate?.poseSelected(self)
         print("Add button pressed")
     }
