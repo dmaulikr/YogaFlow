@@ -49,7 +49,6 @@ class FlowListTableViewController: UITableViewController {
             let flow = FlowController.sharedController.flows[indexPath.row]
             FlowController.sharedController.deleteFlow(flow)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            
         }
     }
     
