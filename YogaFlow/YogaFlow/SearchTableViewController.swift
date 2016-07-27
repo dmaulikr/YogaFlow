@@ -94,14 +94,16 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, Sea
             let pose = poses[indexPath.row]
             cell?.updateCellWithPose(pose)
             cell?.delegate = self
-            cell?.addButtonImage.setImage(UIImage(named: "button-plus"), forState: .Normal)
-            cell?.addButtonImage.enabled = true
+//            cell?.addButtonImage.setImage(UIImage(named: "button-plus"), forState: .Normal)
+//            cell?.addButtonImage.enabled = true
+            cell?.addButtonImage.hidden = false
         case 1:
             let pose = addedPoses[indexPath.row]
             cell?.updateCellWithPose(pose)
             cell?.delegate = self
-            cell?.addButtonImage.setImage(UIImage(named: "button-arrange"), forState: .Normal)
-            cell?.addButtonImage.enabled = false
+//            cell?.addButtonImage.setImage(UIImage(named: "button-arrange"), forState: .Normal)
+//            cell?.addButtonImage.enabled = false
+            cell?.addButtonImage.hidden = true
             
         default:
             break
@@ -113,6 +115,7 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, Sea
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         if segControlOutlet.selectedSegmentIndex == 1 {
+            tableView.setEditing(true, animated: true)
             return true
         } else {
             return false
