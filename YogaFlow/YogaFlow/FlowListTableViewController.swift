@@ -10,7 +10,6 @@ import UIKit
 
 class FlowListTableViewController: UITableViewController {
     
-//    var flows: [Flow] = []
     var flowListTVC: FlowListTableViewController?
     
     override func viewDidLoad() {
@@ -23,7 +22,6 @@ class FlowListTableViewController: UITableViewController {
         navigationItem.title = "namaste"
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "AnandaNeptouch", size: 22)!]
         navigationController?.navigationBar.setBackgroundImage(UIImage(named: "yfheader"), forBarMetrics: .Default)
-        
         
         tableView.reloadData()
     }

@@ -22,7 +22,13 @@ class AddFlowTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
         
+        nameTableViewCell?.userInputTextField.resignFirstResponder()
+        notesTableViewCell?.userInputTextField.resignFirstResponder()
         
     }
     
@@ -40,9 +46,6 @@ class AddFlowTableViewController: UITableViewController {
     }
     
     @IBAction func unwindToAddFlowTVC(segue: UIStoryboardSegue) {}
-    
-    // MARK: - Functions
-    
     
     // MARK: - Table view data source
     

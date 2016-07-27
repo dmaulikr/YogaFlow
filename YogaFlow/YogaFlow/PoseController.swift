@@ -34,7 +34,8 @@ class PoseController {
     }
     
     static func searchPoses(poses: [Pose], searchTerm: String) -> [Pose] {
-        let sortedPoses = poses.filter { $0.name.containsString(searchTerm) }
+        let sortedPoses = poses.filter { $0.name.containsString(searchTerm.lowercaseString) }
+        
         
         return sortedPoses
         
@@ -53,7 +54,7 @@ class PoseController {
     static func checkIfPoseTypesContainsTerm(pose: Pose, term: String) -> Bool {
         for poseType in pose.types {
             if let type = poseType as? Type {
-                if type.name.containsString(term) {
+                if type.name.containsString(term.lowercaseString) {
                     return true
                 }
             }

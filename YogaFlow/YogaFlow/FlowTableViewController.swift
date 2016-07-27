@@ -14,15 +14,15 @@ class FlowTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let flow = flow {
-            self.title = flow.name
-        }
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+        
+        if let flow = flow {
+            self.title = flow.name
+        }
     }
     
     // MARK: - Table view data source

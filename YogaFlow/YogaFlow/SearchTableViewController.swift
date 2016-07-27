@@ -25,6 +25,10 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, Sea
             self.backup = poses
             self.tableView.reloadData()
         }
+        
+        searchBar.placeholder = "Search for pose by name"
+        searchBar.barTintColor = UIColor(red: 0.349, green: 0.349, blue: 0.349, alpha: 1.00)
+        searchBar.keyboardAppearance = .Dark
     }
     
     // MARK: - Actions
@@ -45,7 +49,7 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, Sea
     // MARK: - Functions
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        guard let searchTerm = searchBar.text else {return}
+        guard let searchTerm = searchBar.text?.lowercaseString else {return}
         
         poses = PoseController.searchPoses(poses, searchTerm: searchTerm)
         tableView.reloadData()
@@ -115,24 +119,18 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, Sea
         }
     }
     
-    
-    
-    // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-            if editingStyle == .Delete {
-                let pose = addedPoses[indexPath.row]
-                guard let index = addedPoses.indexOf(pose) else {return}
-                addedPoses.removeAtIndex(index)
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            }
+        if editingStyle == .Delete {
+            let pose = addedPoses[indexPath.row]
+            guard let index = addedPoses.indexOf(pose) else {return}
+            addedPoses.removeAtIndex(index)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        }
         //        else if editingStyle == .Insert {
         //            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         //        }
     }
     
-    
-    
-    // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
         if segControlOutlet.selectedSegmentIndex == 1 {
             let pose = addedPoses[fromIndexPath.row]
@@ -140,7 +138,6 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, Sea
             addedPoses.insert(pose, atIndex: toIndexPath.row)
         }
     }
-    
     
     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         if segControlOutlet.selectedSegmentIndex == 1 {
