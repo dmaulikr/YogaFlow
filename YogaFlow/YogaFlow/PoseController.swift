@@ -29,7 +29,10 @@ class PoseController {
                     return
             }
             let poses = jsonDictionary.flatMap { Pose(name: $0, dictionary: $1 as! [String: AnyObject]) }.sort({$0.0.name < $0.1.name})
-            completion(poses: poses)
+            dispatch_async(dispatch_get_main_queue(), { 
+                completion(poses: poses)
+            })
+            
         }
     }
     

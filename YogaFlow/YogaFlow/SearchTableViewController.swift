@@ -31,6 +31,14 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, Sea
         searchBar.keyboardAppearance = .Dark
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        
+    }
+    
+    
+    
     // MARK: - Actions
     
     @IBAction func doneButtonPressed(sender: AnyObject) {
@@ -38,12 +46,12 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, Sea
     }
     
     @IBAction func segController(sender: AnyObject) {
-        if segControlOutlet.selectedSegmentIndex == 0 {
-            tableView.reloadData()
+        if segControlOutlet.selectedSegmentIndex  == 0 {
+            searchBar.hidden = false
+        } else {
+            searchBar.hidden = true
         }
-        if segControlOutlet.selectedSegmentIndex == 1 {
-            tableView.reloadData()
-        }
+        tableView.reloadData()
     }
     
     // MARK: - Functions
@@ -118,6 +126,7 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, Sea
             tableView.setEditing(true, animated: true)
             return true
         } else {
+            tableView.setEditing(false, animated: false)
             return false
         }
     }
