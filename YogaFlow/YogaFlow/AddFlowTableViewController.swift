@@ -35,7 +35,13 @@ class AddFlowTableViewController: UITableViewController {
     // MARK: - Buttons
     
     @IBAction func saveBtnPressed(sender: AnyObject) {
-        guard let nameCell = nameTableViewCell, notesCell = notesTableViewCell, name = nameCell.userInputTextField.text, notes = notesCell.userInputTextField.text else {return}
+        guard let nameCell = nameTableViewCell, notesCell = notesTableViewCell, name = nameCell.userInputTextField.text, notes = notesCell.userInputTextField.text where name.characters.count > 0 else {
+            let alertController = UIAlertController(title: "Your flow needs a name", message: "Please make sure that you have written a name for your flow sequence.", preferredStyle: .Alert)
+            let okAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+            alertController.addAction(okAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+            return
+        }
 
         if let flow = flow, poses = flow.poses.array as? [Pose] {
             FlowController.sharedController.updateFlow(flow, name: name, notes: notes, poses: poses)
