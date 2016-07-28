@@ -41,6 +41,10 @@ class FlowTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 35
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let flow = flow else {return 0}
         if section == 0 {
@@ -60,20 +64,19 @@ class FlowTableViewController: UITableViewController {
             }
             return cell
         case 1:
-            let cell = tableView.dequeueReusableCellWithIdentifier("basicCell", forIndexPath: indexPath)
+            let cell = tableView.dequeueReusableCellWithIdentifier("notesCell", forIndexPath: indexPath) as? NotesLabelTableViewCell
             if let flow = flow {
-                cell.textLabel?.text = flow.notes
+                cell?.updateWithNotes(flow)
             }
-            return cell
+            return cell ?? NotesLabelTableViewCell()
         default:
-            let cell = tableView.dequeueReusableCellWithIdentifier("basicCell", forIndexPath: indexPath)
+            let cell = tableView.dequeueReusableCellWithIdentifier("timestampCell", forIndexPath: indexPath)
             if let flow = flow {
                 cell.textLabel?.text = flow.timestamp.stringValue()
             }
             return cell
         }
     }
-    
     
     // MARK: - Navigation
     

@@ -148,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TQ6-u3-6sx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2883" y="1241"/>
+            <point key="canvasLocation" x="2821" y="1235"/>
         </scene>
         <!--Flow Table View Controller-->
         <scene sceneID="CaP-Gf-mIm">
@@ -186,14 +186,39 @@
                                     <segue destination="rMk-FL-X8Z" kind="show" identifier="toPoseDetailViaFlowDetail" id="KeA-Wh-z2n"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="basicCell" textLabel="Mbd-fp-nhQ" style="IBUITableViewCellStyleDefault" id="z2O-E5-Bco">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="notesCell" id="z2O-E5-Bco" customClass="NotesLabelTableViewCell" customModule="YogaFlow" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z2O-E5-Bco" id="MHV-dq-7xx">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mbd-fp-nhQ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKs-Lr-xR6">
+                                            <rect key="frame" x="21" y="11" width="559" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="QKs-Lr-xR6" firstAttribute="leading" secondItem="MHV-dq-7xx" secondAttribute="leadingMargin" constant="13" id="3RW-mO-4mZ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="QKs-Lr-xR6" secondAttribute="bottom" constant="3" id="IlM-dB-7JF"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="QKs-Lr-xR6" secondAttribute="trailing" constant="12" id="QXL-7y-J9f"/>
+                                        <constraint firstItem="QKs-Lr-xR6" firstAttribute="top" secondItem="MHV-dq-7xx" secondAttribute="topMargin" constant="3" id="Uom-Un-KK8"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="notesLabel" destination="QKs-Lr-xR6" id="4xA-9x-ny1"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="timestampCell" textLabel="RHc-wV-eod" style="IBUITableViewCellStyleDefault" id="HAF-iZ-n1M">
+                                <rect key="frame" x="0.0" y="180" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HAF-iZ-n1M" id="HSy-Vg-jtj">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RHc-wV-eod">
                                             <rect key="frame" x="15" y="0.0" width="570" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -219,7 +244,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Al-Sv-yrA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1923" y="860"/>
+            <point key="canvasLocation" x="1929" y="834"/>
         </scene>
         <!--Add Flow Table View Controller-->
         <scene sceneID="Wf5-PF-ceR">
@@ -430,7 +455,7 @@
         <image name="button-plus" width="80" height="80"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="KeA-Wh-z2n"/>
         <segue reference="Kzu-no-lIW"/>
-        <segue reference="8yq-Zd-eyw"/>
     </inferredMetricsTieBreakers>
 </document>

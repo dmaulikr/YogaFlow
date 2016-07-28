@@ -33,8 +33,6 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, Sea
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        
     }
     
     
@@ -48,8 +46,10 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, Sea
     @IBAction func segController(sender: AnyObject) {
         if segControlOutlet.selectedSegmentIndex  == 0 {
             searchBar.hidden = false
+            self.tableView.setContentOffset(CGPointMake(0, -64), animated: false)
         } else {
             searchBar.hidden = true
+            self.tableView.setContentOffset(CGPointMake(0, -20), animated: false)
         }
         tableView.reloadData()
     }

@@ -32,6 +32,7 @@
 		40544F0A1D395F93003A1BB7 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40544F091D395F93003A1BB7 /* Stack.swift */; };
 		40BEA3D11D4173CA006FE26C /* SAMARN__.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 40BEA3D01D4173CA006FE26C /* SAMARN__.TTF */; };
 		40BEA3D41D417AC2006FE26C /* Ananda Neptouch.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 40BEA3D31D417AC2006FE26C /* Ananda Neptouch.ttf */; };
+		40D58A9D1D4A717E00CE218A /* NotesLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D58A9C1D4A717E00CE218A /* NotesLabelTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		40544F091D395F93003A1BB7 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		40BEA3D01D4173CA006FE26C /* SAMARN__.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = SAMARN__.TTF; sourceTree = "<group>"; };
 		40BEA3D31D417AC2006FE26C /* Ananda Neptouch.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ananda Neptouch.ttf"; sourceTree = "<group>"; };
+		40D58A9C1D4A717E00CE218A /* NotesLabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesLabelTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		4043515C1D3D8C8D003A7C33 /* Custom Cell Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				40D58A9C1D4A717E00CE218A /* NotesLabelTableViewCell.swift */,
 				4043515D1D3D8F42003A7C33 /* UserInputTableViewCell.swift */,
 				4043515A1D3D8C89003A7C33 /* SearchResultTableViewCell.swift */,
 			);
@@ -264,6 +267,7 @@
 				4043511C1D397E7C003A7C33 /* FlowController.swift in Sources */,
 				404351541D3D4289003A7C33 /* Flow+CoreDataProperties.swift in Sources */,
 				404351191D397E0B003A7C33 /* PoseController.swift in Sources */,
+				40D58A9D1D4A717E00CE218A /* NotesLabelTableViewCell.swift in Sources */,
 				40544EA31D36FBC2003A1BB7 /* FlowListTableViewController.swift in Sources */,
 				40544EA71D36FC19003A1BB7 /* FlowTableViewController.swift in Sources */,
 			);
