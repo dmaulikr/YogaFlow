@@ -12,8 +12,8 @@ class AddFlowTableViewController: UITableViewController {
     
     var flow: Flow?
     var poses: [Pose] = []
-    var nameTableViewCell: UserInputTableViewCell?
-    var notesTableViewCell: UserInputTableViewCell?
+    var nameTableViewCell: NameTextFieldTableViewCell?
+    var notesTableViewCell: NotesTextViewTableViewCell?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,15 +27,15 @@ class AddFlowTableViewController: UITableViewController {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
-        nameTableViewCell?.userInputTextField.resignFirstResponder()
-        notesTableViewCell?.userInputTextField.resignFirstResponder()
+        nameTableViewCell?.nameTextField.resignFirstResponder()
+        notesTableViewCell?.notesTextView.resignFirstResponder()
         
     }
     
     // MARK: - Buttons
     
     @IBAction func saveBtnPressed(sender: AnyObject) {
-        guard let nameCell = nameTableViewCell, notesCell = notesTableViewCell, name = nameCell.userInputTextField.text, notes = notesCell.userInputTextField.text where name.characters.count > 0 else {
+        guard let nameCell = nameTableViewCell, notesCell = notesTableViewCell, name = nameCell.nameTextField.text, notes = notesCell.notesTextView.text where name.characters.count > 0 else {
             let alertController = UIAlertController(title: "Your flow needs a name", message: "Please make sure that you have written a name for your flow sequence.", preferredStyle: .Alert)
             let okAction = UIAlertAction(title: "Ok", style: .Default, handler: nil)
             alertController.addAction(okAction)
@@ -90,19 +90,19 @@ class AddFlowTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            let cell = tableView.dequeueReusableCellWithIdentifier("inputCell", forIndexPath: indexPath) as? UserInputTableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("nameCell", forIndexPath: indexPath) as? NameTextFieldTableViewCell
             if let flow = flow {
                 cell?.updateWithFlowName(flow)
             }
             nameTableViewCell = cell
-            return cell ?? UserInputTableViewCell()
+            return cell ?? NameTextFieldTableViewCell()
         case 1:
-            let cell = tableView.dequeueReusableCellWithIdentifier("inputCell", forIndexPath: indexPath) as? UserInputTableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("notesCell", forIndexPath: indexPath) as? NotesTextViewTableViewCell
             if let flow = flow {
-                cell?.updateWithFlowNotes(flow)
+                cell?.updateWithNotes(flow)
             }
             notesTableViewCell = cell
-            return cell ?? UserInputTableViewCell()
+            return cell ?? NotesTextViewTableViewCell()
         default:
             let cell = tableView.dequeueReusableCellWithIdentifier("poseCell", forIndexPath: indexPath)
             if let flow = flow {

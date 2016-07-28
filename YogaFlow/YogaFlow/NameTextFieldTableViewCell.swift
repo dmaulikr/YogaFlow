@@ -1,19 +1,23 @@
 //
-//  UserInputTableViewCell.swift
+//  NameTextFieldTableViewCell.swift
 //  YogaFlow
 //
-//  Created by Emily Mearns on 7/18/16.
+//  Created by Emily Mearns on 7/28/16.
 //  Copyright © 2016 Emily Mearns. All rights reserved.
 //
 
 import UIKit
 
-class UserInputTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var userInputTextField: UITextField!
+class NameTextFieldTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var nameTextField: UITextField!
     
     var flow: Flow?
     
+    func updateWithFlowName(flow: Flow) {
+        nameTextField.text = flow.name
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,15 +25,8 @@ class UserInputTableViewCell: UITableViewCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+
         // Configure the view for the selected state
-    }
-    
-    func updateWithFlowName(flow: Flow) {
-        userInputTextField.text = flow.name
-    }
-    
-    func updateWithFlowNotes(flow: Flow) {
-        userInputTextField.text = flow.notes
     }
 
 }
