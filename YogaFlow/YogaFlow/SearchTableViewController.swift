@@ -67,7 +67,7 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, Sea
         guard let searchTerm = searchBar.text else {return}
         
         poses = PoseController.searchPoses(backup, searchTerm: searchTerm)
-        if poses.count == 0 {
+        if searchTerm.characters.count == 0 {
             poses = backup
         }
         tableView.reloadData()
