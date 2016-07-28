@@ -14,6 +14,10 @@ class FlowListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // TESTING
+        print(PoseController.types.count)
+        print(PoseController.types.map {$0.name})
     }
     
     override func viewWillAppear(animated: Bool) {

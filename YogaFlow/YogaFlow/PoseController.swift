@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 class PoseController {
     
@@ -36,8 +37,14 @@ class PoseController {
         }
     }
     
+    static var types: [Type] {
+        let request = NSFetchRequest(entityName: "Type")
+        
+        return (try? Stack.sharedStack.managedObjectContext.executeFetchRequest(request)) as? [Type] ?? []
+    }
+    
     static func searchPoses(poses: [Pose], searchTerm: String) -> [Pose] {
-        let sortedPoses = poses.filter { $0.name.containsString(searchTerm.lowercaseString) }
+        let sortedPoses = poses.filter { $0.name.lowercaseString.containsString(searchTerm.lowercaseString) }
         
         
         return sortedPoses

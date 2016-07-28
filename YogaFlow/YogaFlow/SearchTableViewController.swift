@@ -66,7 +66,7 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, Sea
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         guard let searchTerm = searchBar.text else {return}
         
-        poses = PoseController.searchPoses(poses, searchTerm: searchTerm)
+        poses = PoseController.searchPoses(backup, searchTerm: searchTerm)
         if poses.count == 0 {
             poses = backup
         }
@@ -102,15 +102,11 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, Sea
             let pose = poses[indexPath.row]
             cell?.updateCellWithPose(pose)
             cell?.delegate = self
-//            cell?.addButtonImage.setImage(UIImage(named: "button-plus"), forState: .Normal)
-//            cell?.addButtonImage.enabled = true
             cell?.addButtonImage.hidden = false
         case 1:
             let pose = addedPoses[indexPath.row]
             cell?.updateCellWithPose(pose)
             cell?.delegate = self
-//            cell?.addButtonImage.setImage(UIImage(named: "button-arrange"), forState: .Normal)
-//            cell?.addButtonImage.enabled = false
             cell?.addButtonImage.hidden = true
             
         default:
@@ -119,8 +115,6 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, Sea
         return cell ?? SearchResultTableViewCell()
     }
     
-    
-    // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         if segControlOutlet.selectedSegmentIndex == 1 {
             tableView.setEditing(true, animated: true)
@@ -138,9 +132,6 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, Sea
             addedPoses.removeAtIndex(index)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
-        //        else if editingStyle == .Insert {
-        //            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        //        }
     }
     
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
@@ -178,12 +169,6 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate, Sea
         if segue.identifier == "unwindToAddFlowTVC", let addFlowTVC = segue.destinationViewController as? AddFlowTableViewController {
             if addFlowTVC.flow != nil {
                 addFlowTVC.flow?.poses = NSOrderedSet(array: addedPoses)
-                
-                // TODO: Make sure you delete this code when you uncomment ^^^^ or else // OIF
-                //                if var flowPoses = addFlowTVC.flow?.poses.array as? [Pose] {
-                //                    flowPoses.appendContentsOf(addedPoses)
-                //                    addFlowTVC.flow?.poses = NSOrderedSet(array: flowPoses)
-                //                }
             } else {
                 addFlowTVC.poses = addedPoses
             }
