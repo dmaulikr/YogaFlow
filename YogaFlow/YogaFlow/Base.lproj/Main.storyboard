@@ -255,7 +255,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jEb-UU-iK2">
-                            <rect key="frame" x="0.0" y="224" width="600" height="44"/>
+                            <rect key="frame" x="0.0" y="255" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Add/Edit Poses"/>
                             <connections>
@@ -288,15 +288,15 @@
                                     <outlet property="nameTextField" destination="wna-tq-B6p" id="Rde-m8-CxF"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="notesCell" id="VpT-om-va4" customClass="NotesTextViewTableViewCell" customModule="YogaFlow" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="136" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="notesCell" rowHeight="75" id="VpT-om-va4" customClass="NotesTextViewTableViewCell" customModule="YogaFlow" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="136" width="600" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VpT-om-va4" id="LJX-Oj-0MO">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AbQ-sb-CVM">
-                                            <rect key="frame" x="8" y="8" width="584" height="27"/>
+                                            <rect key="frame" x="8" y="10" width="584" height="58"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
@@ -304,17 +304,33 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="AbQ-sb-CVM" secondAttribute="trailing" id="4ts-rO-L73"/>
+                                        <constraint firstItem="AbQ-sb-CVM" firstAttribute="bottom" secondItem="LJX-Oj-0MO" secondAttribute="bottomMargin" constant="2" id="F2j-ah-u41"/>
+                                        <constraint firstItem="AbQ-sb-CVM" firstAttribute="leading" secondItem="LJX-Oj-0MO" secondAttribute="leadingMargin" id="R7K-Vg-UHv"/>
+                                        <constraint firstItem="AbQ-sb-CVM" firstAttribute="top" secondItem="LJX-Oj-0MO" secondAttribute="topMargin" constant="2" id="Xri-bQ-U28"/>
+                                        <constraint firstItem="AbQ-sb-CVM" firstAttribute="top" secondItem="LJX-Oj-0MO" secondAttribute="topMargin" constant="2" id="gkg-oe-Hfa"/>
                                         <constraint firstItem="AbQ-sb-CVM" firstAttribute="leading" secondItem="LJX-Oj-0MO" secondAttribute="leadingMargin" id="gry-Yh-TrE"/>
+                                        <constraint firstItem="AbQ-sb-CVM" firstAttribute="trailing" secondItem="LJX-Oj-0MO" secondAttribute="trailingMargin" id="pRL-tU-5Qb"/>
                                         <constraint firstItem="AbQ-sb-CVM" firstAttribute="top" secondItem="LJX-Oj-0MO" secondAttribute="topMargin" id="pir-hB-aYA"/>
+                                        <constraint firstItem="AbQ-sb-CVM" firstAttribute="bottom" secondItem="LJX-Oj-0MO" secondAttribute="bottomMargin" constant="2" id="tZd-r9-KqS"/>
                                         <constraint firstItem="AbQ-sb-CVM" firstAttribute="bottom" secondItem="LJX-Oj-0MO" secondAttribute="bottomMargin" id="wRV-7H-ahI"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="4ts-rO-L73"/>
+                                            <exclude reference="F2j-ah-u41"/>
+                                            <exclude reference="gkg-oe-Hfa"/>
+                                            <exclude reference="gry-Yh-TrE"/>
+                                            <exclude reference="pir-hB-aYA"/>
+                                            <exclude reference="wRV-7H-ahI"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="notesTextView" destination="AbQ-sb-CVM" id="brH-Zc-1hC"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="poseCell" textLabel="FAZ-Yq-ML7" detailTextLabel="5EI-Fm-FOI" style="IBUITableViewCellStyleSubtitle" id="qFX-Ac-y2X">
-                                <rect key="frame" x="0.0" y="180" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="211" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qFX-Ac-y2X" id="QEP-is-zGh">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>

@@ -29,7 +29,6 @@ class AddFlowTableViewController: UITableViewController {
         
         nameTableViewCell?.nameTextField.resignFirstResponder()
         notesTableViewCell?.notesTextView.resignFirstResponder()
-        
     }
     
     // MARK: - Buttons
@@ -115,6 +114,14 @@ class AddFlowTableViewController: UITableViewController {
                 cell.detailTextLabel?.text = pose.sanskritName
             }
             return cell
+        }
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.section == 1 {
+            return 75
+        } else {
+            return UITableViewAutomaticDimension
         }
     }
     

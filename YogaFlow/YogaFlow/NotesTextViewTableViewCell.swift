@@ -11,6 +11,7 @@ import UIKit
 class NotesTextViewTableViewCell: UITableViewCell {
 
     @IBOutlet weak var notesTextView: UITextView!
+    
     var flow: Flow?
     
     func updateWithNotes(flow: Flow) {
@@ -19,7 +20,9 @@ class NotesTextViewTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        notesTextView.layer.cornerRadius = 5
+        notesTextView.layer.borderColor = UIColor.lightGrayColor().CGColor
+        notesTextView.layer.borderWidth = 0.25
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
