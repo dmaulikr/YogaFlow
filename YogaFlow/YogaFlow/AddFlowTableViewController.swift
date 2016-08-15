@@ -27,6 +27,9 @@ class AddFlowTableViewController: UITableViewController {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
+//        if let flow = flow,  {
+//            
+//        }
         nameTableViewCell?.nameTextField.resignFirstResponder()
         notesTableViewCell?.notesTextView.resignFirstResponder()
     }

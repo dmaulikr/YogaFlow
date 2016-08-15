@@ -496,7 +496,7 @@
         <image name="button-plus" width="80" height="80"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KeA-Wh-z2n"/>
         <segue reference="Kzu-no-lIW"/>
+        <segue reference="8yq-Zd-eyw"/>
     </inferredMetricsTieBreakers>
 </document>
