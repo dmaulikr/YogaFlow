@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		402296E91D89FA5F00B8D36C /* FlowDetailPosesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402296E81D89FA5F00B8D36C /* FlowDetailPosesPageViewController.swift */; };
 		404351191D397E0B003A7C33 /* PoseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404351181D397E0B003A7C33 /* PoseController.swift */; };
 		4043511C1D397E7C003A7C33 /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4043511B1D397E7C003A7C33 /* FlowController.swift */; };
 		4043511E1D397ECB003A7C33 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4043511D1D397ECB003A7C33 /* NetworkController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		402296E81D89FA5F00B8D36C /* FlowDetailPosesPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowDetailPosesPageViewController.swift; sourceTree = "<group>"; };
 		404351181D397E0B003A7C33 /* PoseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoseController.swift; sourceTree = "<group>"; };
 		4043511B1D397E7C003A7C33 /* FlowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
 		4043511D1D397ECB003A7C33 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			children = (
 				40544EA21D36FBC2003A1BB7 /* FlowListTableViewController.swift */,
 				40544EA61D36FC19003A1BB7 /* FlowTableViewController.swift */,
+				402296E81D89FA5F00B8D36C /* FlowDetailPosesPageViewController.swift */,
 				40544EA81D36FC5F003A1BB7 /* AddFlowTableViewController.swift */,
 				40544E9F1D36FAB0003A1BB7 /* SearchTableViewController.swift */,
 				40544EA41D36FC01003A1BB7 /* PoseDetailViewController.swift */,
@@ -272,6 +275,7 @@
 				40D58AA11D4A7E6C00CE218A /* NameTextFieldTableViewCell.swift in Sources */,
 				404351191D397E0B003A7C33 /* PoseController.swift in Sources */,
 				40D58A9D1D4A717E00CE218A /* NotesLabelTableViewCell.swift in Sources */,
+				402296E91D89FA5F00B8D36C /* FlowDetailPosesPageViewController.swift in Sources */,
 				40544EA31D36FBC2003A1BB7 /* FlowListTableViewController.swift in Sources */,
 				40544EA71D36FC19003A1BB7 /* FlowTableViewController.swift in Sources */,
 			);

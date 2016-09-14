@@ -63,7 +63,7 @@
         <!--Pose Detail View Controller-->
         <scene sceneID="BXs-y8-Ava">
             <objects>
-                <viewController id="rMk-FL-X8Z" customClass="PoseDetailViewController" customModule="YogaFlow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PoseDetailVC" id="rMk-FL-X8Z" customClass="PoseDetailViewController" customModule="YogaFlow" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="J8e-pr-g1r"/>
                         <viewControllerLayoutGuide type="bottom" id="nSQ-Gm-cl8"/>
@@ -148,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TQ6-u3-6sx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2821" y="1235"/>
+            <point key="canvasLocation" x="3302" y="1287"/>
         </scene>
         <!--Flow Table View Controller-->
         <scene sceneID="CaP-Gf-mIm">
@@ -183,7 +183,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="rMk-FL-X8Z" kind="show" identifier="toPoseDetailViaFlowDetail" id="KeA-Wh-z2n"/>
+                                    <segue destination="lRK-ZP-J5a" kind="show" identifier="toPoseDetailViaFlowDetail" id="4Ba-UH-NBk"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="notesCell" id="z2O-E5-Bco" customClass="NotesLabelTableViewCell" customModule="YogaFlow" customModuleProvider="target">
@@ -245,6 +245,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Al-Sv-yrA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1929" y="834"/>
+        </scene>
+        <!--Flow Detail Poses Page View Controller-->
+        <scene sceneID="8qn-2b-DAz">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="lRK-ZP-J5a" customClass="FlowDetailPosesPageViewController" customModule="YogaFlow" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EuJ-78-bA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2310" y="1637"/>
         </scene>
         <!--Add Flow Table View Controller-->
         <scene sceneID="Wf5-PF-ceR">
@@ -497,6 +505,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Kzu-no-lIW"/>
-        <segue reference="8yq-Zd-eyw"/>
     </inferredMetricsTieBreakers>
 </document>

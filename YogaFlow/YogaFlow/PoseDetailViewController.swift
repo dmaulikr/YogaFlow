@@ -15,6 +15,8 @@ class PoseDetailViewController: UIViewController {
     @IBOutlet weak var poseTypeLabel: UILabel!
     @IBOutlet weak var poseImageView: UIImageView!
     
+    static let sharedController = PoseDetailViewController()
+    
     var pose: Pose?
     
     override func viewDidLoad() {

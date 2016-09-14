@@ -86,10 +86,16 @@ class FlowTableViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toPoseDetailViaFlowDetail", let indexPath = tableView.indexPathForSelectedRow {
-            if let pose = flow?.poses[indexPath.row] as? Pose {
-                let poseDetailVC = segue.destinationViewController as? PoseDetailViewController
-                poseDetailVC?.pose = pose
+            if let flow = flow, let pose = flow.poses[indexPath.row] as? Pose, let poseDetailPageVC = segue.destinationViewController as? FlowDetailPosesPageViewController {
+                poseDetailPageVC.flow = flow
+                poseDetailPageVC.pose = pose
             }
+            
+            // For just going to detail, without paging function:
+            //            if let pose = flow?.poses[indexPath.row] as? Pose {
+            //                let poseDetailVC = segue.destinationViewController as? PoseDetailViewController
+            //                poseDetailVC?.pose = pose
+            //            }
         }
         
         if segue.identifier == "toAddFlowViaDetail" {
