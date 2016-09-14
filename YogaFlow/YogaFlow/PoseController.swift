@@ -46,7 +46,6 @@ class PoseController {
     static func searchPoses(poses: [Pose], searchTerm: String) -> [Pose] {
         let sortedPoses = poses.filter { $0.name.lowercaseString.containsString(searchTerm.lowercaseString) }
         
-        
         return sortedPoses
         
 //        fetchPoses { (poses) in
