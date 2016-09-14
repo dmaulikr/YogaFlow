@@ -34,12 +34,23 @@ class FlowDetailPosesPageViewController: UIPageViewController {
     }
     
     var orderedViewControllers: [UIViewController] {
-        if let pose = pose, let poseDetailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PoseDetailVC") as? PoseDetailViewController {
-            poseDetailVC.pose = pose
-            return [poseDetailVC]
-        } else {
-            return []
+        var detailViewControllers: [UIViewController] = []
+        
+        if let flow = flow {
+            for pose in flow.poses {
+                let poseDetailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PoseDetailVC") as? PoseDetailViewController
+                poseDetailVC?.pose = pose as? Pose
+                detailViewControllers.append(poseDetailVC!)
+            }
         }
+//        
+//        if let pose = pose, let poseDetailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PoseDetailVC") as? PoseDetailViewController {
+//            poseDetailVC.pose = pose
+//            return [poseDetailVC]
+//        } else {
+//            return []
+//        }
+        return detailViewControllers
     }
     
 }
